@@ -78,7 +78,6 @@ body {
 .navbar ul li:last-child a {
   border: 1.4px solid yellow;
   padding: 8px 15px;
-  border-radius: 8px;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
 }
@@ -108,7 +107,6 @@ body {
   background-color: black;
   color: white;
   padding: 10px 20px;
-  border-radius: 8px;
 }
 
 .hero-text h2 {
@@ -120,13 +118,20 @@ body {
 }
 
 .g-head {
-  font-size: 2em;
+  font-size: 3em;
   margin-bottom: 0;
+  background-color: yellow;
+  display: inline-block;
+  width: 45%;
+  padding-top: 10px;
+  padding-left: 6px;
+  border-left: 8px solid black;
 }
 
 .g-subhead {
-  font-size: 1.3em;
+  font-size: 1.5em;
   margin: 0 0 2em 0;
+  color: #242424;
 }
 
 .gallery {
@@ -169,7 +174,8 @@ body {
   background-color: black;
   display: inline-block;
   padding: .3em .6em;
-  border-radius: 6px;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
 }
 
 .gallery .card .caption .additional {
@@ -188,7 +194,6 @@ body {
   padding: .5em;
   font-weight: bold;
   color: black;
-  border-radius: 8px;
 }
 
 .gallery .card .caption .additional a:last-child {
