@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-  padding: 4em;
+  padding: 5em;
 }
 
 .container-fluid {
@@ -78,15 +78,15 @@ body {
 .navbar ul li:last-child a {
   border: 1.4px solid yellow;
   padding: 8px 15px;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .navbar ul li:last-child a:hover {
   background-color: yellow;
   color: black;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .hero video {

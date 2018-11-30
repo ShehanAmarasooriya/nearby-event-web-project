@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-    padding: 4em;
+    padding: 5em;
 }
 
 .container-fluid {
@@ -70,13 +70,13 @@ body {
             a {
                 border: 1.4px solid yellow;
                 padding: 8px 15px;
-                transition-duration: 0.3s;
+                transition-duration: 0.4s;
             }
 
             a:hover {
                 background-color: yellow;
                 color: black;
-                transition-duration: 0.3s;
+                transition-duration: 0.4s;
             }
         }
     }
