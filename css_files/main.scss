@@ -21,13 +21,41 @@ body {
     color: white;
 }
 
+.btn-primary {
+    border: 1.5px solid black;
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    transition-duration: .4s;
+}
+
+.btn-primary:hover {
+    background-color: black;
+    color: yellow;
+    transition-duration: .4s;
+}
+
+.btn-secondary {
+    border: 1.5px solid yellow;
+    text-decoration: none;
+    transition-duration: .4s;
+    color: yellow;
+    padding: 10px 20px;
+}
+
+.btn-secondary:hover {
+    background-color: yellow;
+    color: black;
+    transition-duration: .4s;
+}
+
 .shape {
     -webkit-clip-path: polygon(100% 0%, 0% 0%, 0 90%, 30% 90%, 35% 85%, 40% 90%, 50% 100%, 60% 90%, 65% 85%, 70% 90%, 100% 90%);
     clip-path: polygon(100% 0%, 0% 0%, 0 90%, 30% 90%, 35% 85%, 40% 90%, 50% 100%, 60% 90%, 65% 85%, 70% 90%, 100% 90%);
 }
 
 .container {
-    padding: 5em;
+    padding: 2em 5em;
 }
 
 .container-fluid {
@@ -239,6 +267,34 @@ body {
         .caption::before {
             transform: rotateZ(-45deg) translate3d(0,0,0);
         }
+    }
+}
+
+.banner {
+    position: relative;
+
+    .banner-text {
+        font-size: 3.5em;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        display: inline-block;
+    
+        span {
+            background-color: black;
+            color: yellow;
+            padding: 0px 10px;
+        }
+    }
+
+    a {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1em;
+        font-weight: bold;
+        margin-left: 8em;
+        text-transform: uppercase;
     }
 }
 
