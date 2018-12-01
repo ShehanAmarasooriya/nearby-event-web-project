@@ -12,236 +12,281 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="#">Browse Events</a></li>
-            <li><a href="#">Create Events</a></li>
-            <li><a href="#">Sign In</a></li>
-        </ul>
-    </nav>
-    <div class="container-fluid bg-black shape">
-        <div class="hero">
-            <video autoplay muted loop id="video">
-                <source src="./Resources/Video/Video.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="hero-text">
-            <h1 
-                data-sal-duration="1200"
-                data-sal="slide-up"
-                data-sal-delay="600"
-                data-sal-easing="ease-out-bounce"
-            >Discover events happening in your city</h1>
-            <h2 
-                data-sal-duration="1200"
-                data-sal="slide-up"
-                data-sal-delay="900"
-                data-sal-easing="ease-out-bounce"
-            >Do more of what you love</h2>
-        </div>
-        <div class="arrow bounce">
-            <i class="fa fa-angle-down fa-2x txt-white"></i>
-        </div>
-    </div>
-    <div class="container">
-        <h1 class="g-head"
-            data-sal-duration="1200"
-            data-sal="slide-right"
-            data-sal-delay="400"
-            data-sal-easing="ease-out-bounce"
-        >Categories to Explore</h1>
-        <h3 class="g-subhead"
-            data-sal-duration="1200"
-            data-sal="slide-left"
-            data-sal-delay="700"
-            data-sal-easing="ease-out-bounce"
-        >Find out the events in the moods for...</h3>
-        <div class="gallery">
-            <div 
+    <div id="dimmer">
+        <div class="dim-content">
+            <div class="user-form bg-black"
                 data-sal-duration="800"
-                data-sal="slide-up"
-                data-sal-delay="400"
-                data-sal-easing="ease-out-bounce" 
-            >
-                <div class="card">
-                    <img src="./Resources/Images/food.png">
-                    <div class="caption">
-                        <h3>Food & Drink</h3>
-                        <div class="additional">
-                            <p>food drink food drink</p>
-                            <a href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                data-sal-duration="800"
-                data-sal="slide-up"
-                data-sal-delay="500"
+                data-sal="slide-down"
+                data-sal-delay="50"
                 data-sal-easing="ease-out-bounce"
             >
-                <div class="card">
-                    <img src="./Resources/Images/concerts.png">
-                    <div class="caption">
-                        <h3>Concerts</h3>
-                        <div class="additional">
-                            <p>food drink food drink</p>
-                            <a href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                data-sal-duration="800"
-                data-sal="slide-up"
-                data-sal-delay="600"
-                data-sal-easing="ease-out-bounce"
-            >
-                <div class="card">
-                    <img src="./Resources/Images/artdrama.png">
-                    <div class="caption">
-                        <h3>Art & Drama</h3>
-                        <div class="additional">
-                            <p>food drink food drink</p>
-                            <a href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                data-sal-duration="800"
-                data-sal="slide-up"
-                data-sal-delay="700"
-                data-sal-easing="ease-out-bounce"
-            >
-                <div class="card">
-                    <img src="./Resources/Images/business.png">
-                    <div class="caption">
-                        <h3>Business</h3>
-                        <div class="additional">
-                            <p>food drink food drink</p>
-                            <a href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                data-sal-duration="800"
-                data-sal="slide-up"
-                data-sal-delay="800"
-                data-sal-easing="ease-out-bounce"
-            >
-                <div class="card">
-                    <img src="./Resources/Images/exhibitions.png">
-                    <div class="caption">
-                        <h3>Exhibitions</h3>
-                        <div class="additional">
-                            <p>food drink food drink</p>
-                            <a href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                data-sal-duration="800"
-                data-sal="slide-up"
-                data-sal-delay="400"
-                data-sal-easing="ease-out-bounce"
-            >
-                <div class="card">
-                    <img src="./Resources/Images/meetups.png">
-                    <div class="caption">
-                        <h3>Meetups</h3>
-                        <div class="additional">
-                            <p>food drink food drink</p>
-                            <a href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                data-sal-duration="800"
-                data-sal="slide-up"
-                data-sal-delay="500"
-                data-sal-easing="ease-out-bounce"
-            >
-                <div class="card">
-                    <img src="./Resources/Images/party.png">
-                    <div class="caption">
-                        <h3>Party</h3>
-                        <div class="additional">
-                            <p>food drink food drink</p>
-                            <a href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                data-sal-duration="800"
-                data-sal="slide-up"
-                data-sal-delay="600"
-                data-sal-easing="ease-out-bounce"
-            >
-                <div class="card">
-                    <img src="./Resources/Images/sports.png">
-                    <div class="caption">
-                        <h3>Sports</h3>
-                        <div class="additional">
-                            <p>food drink food drink</p>
-                            <a href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                data-sal-duration="800"
-                data-sal="slide-up"
-                data-sal-delay="700"
-                data-sal-easing="ease-out-bounce"
-            >
-                <div class="card">
-                    <img src="./Resources/Images/health.png">
-                    <div class="caption">
-                        <h3>Health & Wellness</h3>
-                        <div class="additional">
-                            <p>food drink food drink</p>
-                            <a href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                data-sal-duration="800"
-                data-sal="slide-up"
-                data-sal-delay="800"
-                data-sal-easing="ease-out-bounce"
-            >
-                <div class="card">
-                    <img src="./Resources/Images/tech.png">
-                    <div class="caption">
-                        <h3>Technology</h3>
-                        <div class="additional">
-                            <p>food drink food drink</p>
-                            <a href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
+                <a id="btnclose">Close</a>
+                <h1
+                    data-sal-duration="1200"
+                    data-sal="slide-up"
+                    data-sal-delay="200"
+                    data-sal-easing="ease-out-bounce"
+                >Welcome back</h1>
+                <p
+                    data-sal-duration="1200"
+                    data-sal="slide-down"
+                    data-sal-delay="300"
+                    data-sal-easing="ease-out-bounce"
+                >Please enter your password to log in.</p>
+                <input type="text" id="email" placeholder="Email"
+                    data-sal-duration="1200"
+                    data-sal="fade"
+                    data-sal-delay="200"
+                    data-sal-easing="ease-out-bounce"
+                >
+                <input type="password" id="password" placeholder="Password"
+                    data-sal-duration="1200"
+                    data-sal="fade"
+                    data-sal-delay="200"
+                    data-sal-easing="ease-out-bounce"
+                >
+                <a class="btn-secondary" href="#" onclick="dim"
+                    data-sal-duration="1200"
+                    data-sal="slide-up"
+                    data-sal-delay="400"
+                    data-sal-easing="ease-out-bounce"
+                >Log In</a>
+                <a id="create" href="#">Create a new account</a>
             </div>
         </div>
     </div>
-    <div class="container bg-yellow banner"
-        data-sal-duration="1400"
-        data-sal="fade"
-        data-sal-delay="500"
-        data-sal-easing="ease-out-bounce"
-    >
-        <h1 class="banner-text"
-            data-sal-duration="800"
-            data-sal="slide-right"
-            data-sal-delay="400"
+    <div class="container-fluid">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Browse Events</a></li>
+                <li><a href="#">Create Events</a></li>
+                <li><a id="btndim">Log In</a></li>
+            </ul>
+        </nav>
+        <div class="container-fluid bg-black shape">
+            <div class="hero">
+                <video autoplay muted loop id="video">
+                    <source src="./Resources/Video/Video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-text">
+                <h1 
+                    data-sal-duration="1200"
+                    data-sal="slide-up"
+                    data-sal-delay="600"
+                    data-sal-easing="ease-out-bounce"
+                >Discover events happening in your city</h1>
+                <h2 
+                    data-sal-duration="1200"
+                    data-sal="slide-up"
+                    data-sal-delay="900"
+                    data-sal-easing="ease-out-bounce"
+                >Do more of what you love</h2>
+            </div>
+            <div class="arrow bounce">
+                <i class="fa fa-angle-down fa-2x txt-white"></i>
+            </div>
+        </div>
+        <div class="container">
+            <h1 class="g-head"
+                data-sal-duration="1200"
+                data-sal="slide-right"
+                data-sal-delay="400"
+                data-sal-easing="ease-out-bounce"
+            >Categories to Explore</h1>
+            <h3 class="g-subhead"
+                data-sal-duration="1200"
+                data-sal="slide-left"
+                data-sal-delay="700"
+                data-sal-easing="ease-out-bounce"
+            >Find out the events in the moods for...</h3>
+            <div class="gallery">
+                <div 
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="400"
+                    data-sal-easing="ease-out-bounce" 
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/food.png">
+                        <div class="caption">
+                            <h3>Food & Drink</h3>
+                            <div class="additional">
+                                <p>food drink food drink</p>
+                                <a href="#">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="500"
+                    data-sal-easing="ease-out-bounce"
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/concerts.png">
+                        <div class="caption">
+                            <h3>Concerts</h3>
+                            <div class="additional">
+                                <p>food drink food drink</p>
+                                <a href="#">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="600"
+                    data-sal-easing="ease-out-bounce"
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/artdrama.png">
+                        <div class="caption">
+                            <h3>Art & Drama</h3>
+                            <div class="additional">
+                                <p>food drink food drink</p>
+                                <a href="#">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="700"
+                    data-sal-easing="ease-out-bounce"
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/business.png">
+                        <div class="caption">
+                            <h3>Business</h3>
+                            <div class="additional">
+                                <p>food drink food drink</p>
+                                <a href="#">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="800"
+                    data-sal-easing="ease-out-bounce"
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/exhibitions.png">
+                        <div class="caption">
+                            <h3>Exhibitions</h3>
+                            <div class="additional">
+                                <p>food drink food drink</p>
+                                <a href="#">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="400"
+                    data-sal-easing="ease-out-bounce"
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/meetups.png">
+                        <div class="caption">
+                            <h3>Meetups</h3>
+                            <div class="additional">
+                                <p>food drink food drink</p>
+                                <a href="#">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="500"
+                    data-sal-easing="ease-out-bounce"
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/party.png">
+                        <div class="caption">
+                            <h3>Party</h3>
+                            <div class="additional">
+                                <p>food drink food drink</p>
+                                <a href="#">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="600"
+                    data-sal-easing="ease-out-bounce"
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/sports.png">
+                        <div class="caption">
+                            <h3>Sports</h3>
+                            <div class="additional">
+                                <p>food drink food drink</p>
+                                <a href="#">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="700"
+                    data-sal-easing="ease-out-bounce"
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/health.png">
+                        <div class="caption">
+                            <h3>Health & Wellness</h3>
+                            <div class="additional">
+                                <p>food drink food drink</p>
+                                <a href="#">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="800"
+                    data-sal-easing="ease-out-bounce"
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/tech.png">
+                        <div class="caption">
+                            <h3>Technology</h3>
+                            <div class="additional">
+                                <p>food drink food drink</p>
+                                <a href="#">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container bg-yellow banner"
+            data-sal-duration="1400"
+            data-sal="fade"
+            data-sal-delay="500"
             data-sal-easing="ease-out-bounce"
-        >Want to create an <span>event ?</span></h1>
-        <a class="btn-primary" href="#">Start Now</a>
+        >
+            <h1 class="banner-text"
+                data-sal-duration="800"
+                data-sal="slide-right"
+                data-sal-delay="400"
+                data-sal-easing="ease-out-bounce"
+            >Want to create an <span>event ?</span></h1>
+            <a class="btn-primary" href="#">Start Now</a>
+        </div>
     </div>
 
     <!--TODO Start here to continue-->
@@ -249,15 +294,7 @@
 
     </div>
 
-    <script>
-        $(function () {
-            $(document).scroll(function () {
-                var $nav = $(".navbar");
-                var $hero = $(".hero");
-                $nav.toggleClass('scrolled', $(this).scrollTop() > $hero.height()*0.6);
-            });
-        });</script>
-    <script src="./node_modules/sal.js/dist/sal.js"></script>
-    <script>sal();</script>
+<script src="./node_modules/sal.js/dist/sal.js"></script>
+<script src="./scripts/main.js"></script>
 </body>
 </html>
