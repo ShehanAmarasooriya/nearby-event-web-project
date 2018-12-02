@@ -13,7 +13,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#dimmer {
+.dimmer {
   background-color: yellow;
   position: fixed;
   top: 0;
@@ -23,7 +23,7 @@ body {
   display: none;
 }
 
-#dimmer .dim-content {
+.dimmer .dim-content {
   color: white;
   position: absolute;
   top: 50%;
@@ -411,7 +411,7 @@ body {
   padding: 12px 10px;
 }
 
-.user-form input[type="password"] {
+.user-form input[type="password"]:last-of-type {
   margin-bottom: 30px;
 }
 
@@ -424,14 +424,14 @@ body {
   color: white;
 }
 
-.user-form #btnclose {
+.user-form .btnclose {
   position: absolute;
   float: right;
   right: -85px;
   top: 2px;
 }
 
-.user-form #create {
+.user-form .create {
   margin-top: 10px;
   font-size: 0.8em;
   width: 70%;

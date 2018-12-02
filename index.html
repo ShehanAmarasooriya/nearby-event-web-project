@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
 </head>
 <body>
-    <div id="dimmer">
+    <div class="dimmer" id="login-dimmer">
         <div class="dim-content">
             <div class="user-form bg-black"
                 data-sal-duration="800"
@@ -20,7 +20,7 @@
                 data-sal-delay="50"
                 data-sal-easing="ease-out-bounce"
             >
-                <a id="btnclose">Close</a>
+                <a id="btnclose-login" class="btnclose">Close</a>
                 <h1
                     data-sal-duration="1200"
                     data-sal="slide-up"
@@ -33,25 +33,78 @@
                     data-sal-delay="300"
                     data-sal-easing="ease-out-bounce"
                 >Please enter your password to log in.</p>
-                <input type="text" id="email" placeholder="Email"
-                    data-sal-duration="1200"
-                    data-sal="fade"
-                    data-sal-delay="200"
-                    data-sal-easing="ease-out-bounce"
-                >
-                <input type="password" id="password" placeholder="Password"
-                    data-sal-duration="1200"
-                    data-sal="fade"
-                    data-sal-delay="200"
-                    data-sal-easing="ease-out-bounce"
-                >
-                <a class="btn-secondary" href="#" onclick="dim"
+                <form>
+                    <input type="text" id="email" placeholder="Email"
+                        data-sal-duration="1200"
+                        data-sal="fade"
+                        data-sal-delay="200"
+                        data-sal-easing="ease-out-bounce"
+                    >
+                    <input type="password" id="password" placeholder="Password"
+                        data-sal-duration="1200"
+                        data-sal="fade"
+                        data-sal-delay="200"
+                        data-sal-easing="ease-out-bounce"
+                    >
+                    <a class="btn-secondary" href="#" onclick="dim"
+                        data-sal-duration="1200"
+                        data-sal="slide-up"
+                        data-sal-delay="400"
+                        data-sal-easing="ease-out-bounce"
+                    >Log In</a>
+                </form>
+                <a id="btnsignup" class="create">Create a new account</a>
+            </div>
+        </div>
+    </div>
+    <div class="dimmer" id="signup-dimmer">
+        <div class="dim-content">
+            <div class="user-form bg-black"
+                data-sal-duration="800"
+                data-sal="slide-down"
+                data-sal-delay="50"
+                data-sal-easing="ease-out-bounce"
+            >
+                <a id="btnclose-signup" class="btnclose">Close</a>
+                <h1
                     data-sal-duration="1200"
                     data-sal="slide-up"
-                    data-sal-delay="400"
+                    data-sal-delay="200"
                     data-sal-easing="ease-out-bounce"
-                >Log In</a>
-                <a id="create" href="#">Create a new account</a>
+                >Let's get started</h1>
+                <p
+                    data-sal-duration="1200"
+                    data-sal="slide-down"
+                    data-sal-delay="300"
+                    data-sal-easing="ease-out-bounce"
+                >Enter your email to sign up.</p>
+                <form>
+                    <input type="text" id="email" placeholder="Email"
+                        data-sal-duration="1200"
+                        data-sal="fade"
+                        data-sal-delay="200"
+                        data-sal-easing="ease-out-bounce"
+                    >
+                    <input type="password" id="password" placeholder="Password"
+                        data-sal-duration="1200"
+                        data-sal="fade"
+                        data-sal-delay="200"
+                        data-sal-easing="ease-out-bounce"
+                    >
+                    <input type="password" id="passwordConfirm" placeholder="Confirm Password"
+                        data-sal-duration="1200"
+                        data-sal="fade"
+                        data-sal-delay="200"
+                        data-sal-easing="ease-out-bounce"
+                    >
+                    <a class="btn-secondary" href="#" onclick="dim"
+                        data-sal-duration="1200"
+                        data-sal="slide-up"
+                        data-sal-delay="400"
+                        data-sal-easing="ease-out-bounce"
+                    >Sign Up</a>
+                    <a id="btnExisting" class="create">Have an existing account</a>
+                </form>
             </div>
         </div>
     </div>
@@ -60,7 +113,7 @@
             <ul>
                 <li><a href="#">Browse Events</a></li>
                 <li><a href="#">Create Events</a></li>
-                <li><a id="btndim">Log In</a></li>
+                <li><a id="btnlogin">Log In</a></li>
             </ul>
         </nav>
         <div class="container-fluid bg-black shape">

@@ -11,8 +11,8 @@ $(function () {
     });
 });
 
-$("#btndim").click(function() {
-    $("#dimmer").css({
+$("#btnlogin").click(function() {
+    $("#login-dimmer").css({
         display: 'block',
         'z-index': 1
     }).animate({
@@ -20,8 +20,40 @@ $("#btndim").click(function() {
     }, 500);
 });
 
-$("#btnclose").click(function() {
-    $("#dimmer").css('display', 'none').animate({
+$("#btnclose-login").click(function() {
+    $("#login-dimmer").css('display', 'none').animate({
         opacity: 0,
+    }, 500);
+});
+
+$("#btnsignup").click(function() {
+    $("#login-dimmer").css('display', 'none').animate({
+        opacity: 0,
+    }, 500);
+
+    $("#signup-dimmer").css({
+        display: 'block',
+        'z-index': 1
+    }).animate({
+        opacity: 0.92
+    }, 500);
+});
+
+$("#btnclose-signup").click(function() {
+    $("#signup-dimmer").css('display', 'none').animate({
+        opacity: 0,
+    }, 500);
+});
+
+$("#btnExisting").click(function() {
+    $("#signup-dimmer").css('display', 'none').animate({
+        opacity: 0,
+    }, 500);
+
+    $("#login-dimmer").css({
+        display: 'block',
+        'z-index': 1
+    }).animate({
+        opacity: 0.92
     }, 500);
 });

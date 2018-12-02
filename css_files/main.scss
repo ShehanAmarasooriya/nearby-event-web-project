@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#dimmer {
+.dimmer {
     background-color: yellow;
     position: fixed;
     top: 0;
@@ -368,7 +368,7 @@ body {
         padding: 12px 10px;
     }
 
-    input[type="password"] {
+    input[type="password"]:last-of-type {
         margin-bottom: 30px;
     }
 
@@ -381,14 +381,14 @@ body {
         color: white;
     }
 
-    #btnclose {
+    .btnclose {
         position: absolute;
         float: right;
         right: -85px;
         top: 2px;
     }
 
-    #create {
+    .create {
         margin-top: 10px;
         font-size: 0.8em;
         width: 70%;
