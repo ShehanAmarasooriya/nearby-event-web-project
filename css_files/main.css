@@ -403,15 +403,15 @@ body {
   color: white;
 }
 
-.user-form input {
+.user-form form input {
   display: block;
   margin-bottom: 15px;
-  width: 20em;
+  width: 93%;
   border: .1px solid black;
   padding: 12px 10px;
 }
 
-.user-form input[type="password"]:last-of-type {
+.user-form form input[type="password"]:last-of-type {
   margin-bottom: 30px;
 }
 

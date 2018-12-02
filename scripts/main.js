@@ -26,7 +26,7 @@ $("#btnclose-login").click(function() {
     }, 500);
 });
 
-$("#btnsignup").click(function() {
+$("#btn-create").click(function() {
     $("#login-dimmer").css('display', 'none').animate({
         opacity: 0,
     }, 500);

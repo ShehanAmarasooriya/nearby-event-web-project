@@ -360,16 +360,18 @@ body {
         color: white;
     }
 
-    input {
-        display: block;
-        margin-bottom: 15px;
-        width: 20em;
-        border: .1px solid black;
-        padding: 12px 10px;
-    }
-
-    input[type="password"]:last-of-type {
-        margin-bottom: 30px;
+    form {
+        input {
+            display: block;
+            margin-bottom: 15px;
+            width: 93%;
+            border: .1px solid black;
+            padding: 12px 10px;
+        }
+    
+        input[type="password"]:last-of-type {
+            margin-bottom: 30px;
+        }
     }
 
     a {
