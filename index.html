@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
 </head>
 <body>
+    <!-- Dimmer for login Screen -->
     <div class="dimmer" id="login-dimmer">
         <div class="dim-content">
             <div class="user-form bg-black"
@@ -34,13 +35,13 @@
                     data-sal-easing="ease-out-bounce"
                 >Please enter your password to log in.</p>
                 <form>
-                    <input type="text" id="email" placeholder="Email"
+                    <input type="text" id="login-email" placeholder="Email"
                         data-sal-duration="1200"
                         data-sal="fade"
                         data-sal-delay="200"
                         data-sal-easing="ease-out-bounce"
                     >
-                    <input type="password" id="password" placeholder="Password"
+                    <input type="password" id="login-password" placeholder="Password"
                         data-sal-duration="1200"
                         data-sal="fade"
                         data-sal-delay="200"
@@ -57,6 +58,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Dimmer for Sign up Screen -->
     <div class="dimmer" id="signup-dimmer">
         <div class="dim-content">
             <div class="user-form bg-black"
@@ -79,19 +82,19 @@
                     data-sal-easing="ease-out-bounce"
                 >Enter your email to sign up.</p>
                 <form>
-                    <input type="text" id="email" placeholder="Email"
+                    <input type="text" id="signup-email" placeholder="Email"
                         data-sal-duration="1200"
                         data-sal="fade"
                         data-sal-delay="200"
                         data-sal-easing="ease-out-bounce"
                     >
-                    <input type="password" id="password" placeholder="Password"
+                    <input type="password" id="signup-password" placeholder="Password"
                         data-sal-duration="1200"
                         data-sal="fade"
                         data-sal-delay="200"
                         data-sal-easing="ease-out-bounce"
                     >
-                    <input type="password" id="passwordConfirm" placeholder="Confirm Password"
+                    <input type="password" id="signup-password-confirm" placeholder="Confirm Password"
                         data-sal-duration="1200"
                         data-sal="fade"
                         data-sal-delay="200"
@@ -108,14 +111,21 @@
             </div>
         </div>
     </div>
+
+    <!-- Main Container -->
     <div class="container-fluid">
+
+        <!-- Navigation bar -->
         <nav class="navbar">
+            <a href="#"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
-                <li><a href="#">Browse Events</a></li>
+                <li><a href="./browse-events.html">Browse Events</a></li>
                 <li><a href="#">Create Events</a></li>
                 <li><a id="btnlogin">Log In</a></li>
             </ul>
         </nav>
+
+        <!-- Container with video -->
         <div class="container-fluid bg-black shape">
             <div class="hero">
                 <video autoplay muted loop id="video">
@@ -140,6 +150,8 @@
                 <i class="fa fa-angle-down fa-2x txt-white"></i>
             </div>
         </div>
+
+        <!-- Container with the Gallery -->
         <div class="container">
             <h1 class="g-head"
                 data-sal-duration="1200"
@@ -326,6 +338,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Create event banner -->
         <div class="container bg-yellow banner"
             data-sal-duration="1400"
             data-sal="fade"
@@ -342,12 +356,12 @@
         </div>
     </div>
 
-    <!--TODO Start here to continue-->
+    <!--TODO Start here to continue with footer-->
     <div class="container">
 
     </div>
 
-<script src="./node_modules/sal.js/dist/sal.js"></script>
-<script src="./scripts/main.js"></script>
+    <script src="./node_modules/sal.js/dist/sal.js"></script>
+    <script src="./scripts/animate.js"></script>
 </body>
 </html>

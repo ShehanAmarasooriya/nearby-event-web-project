@@ -2,6 +2,10 @@ body, html {
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: grid;
     grid-template-columns: 100%;
@@ -29,7 +33,7 @@ body {
 }
 
 .bg-black {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.85) !important;
 }
 
 .bg-yellow {
@@ -73,6 +77,10 @@ body {
     clip-path: polygon(100% 0%, 0% 0%, 0 90%, 30% 90%, 35% 85%, 40% 90%, 50% 100%, 60% 90%, 65% 85%, 70% 90%, 100% 90%);
 }
 
+.mt-5 {
+    margin-top: 5em;
+}
+
 .container {
     padding: 2em 5em;
 }
@@ -92,6 +100,12 @@ body {
     z-index: 1;
     width: 100%;
     text-align: right;
+
+    img {
+        position: relative;
+        float: left;
+        z-index: 1;
+    }
 
     ul {
         position: relative;
@@ -235,6 +249,15 @@ body {
                     padding: .5em;
                     font-weight: bold;
                     color: black;
+                    transition-duration: .4s;
+                    border: 1px solid white;
+                }
+
+                a:hover {
+                    background: black;
+                    color: white;
+                    transition-duration: .4s;
+                    border: 1px solid black;
                 }
 
                 a:last-child {
@@ -271,7 +294,7 @@ body {
         background: black;
 
         img {
-            transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) scale(1.03);
             opacity: .4;
         }
 
@@ -361,6 +384,9 @@ body {
     }
 
     form {
+        position: relative;
+        display: block;
+
         input {
             display: block;
             margin-bottom: 15px;
