@@ -139,10 +139,24 @@
                     data-sal-delay="700"
                     data-sal-easing="ease-out-bounce"
                 >Find out all the events happening nearby...</h3>
-                <div class="container bg-black">
+
+                <!-- Search bar -->
+                <div class="container bg-black search-bar">
                     <form>
                         <input type="text" id="txt-event" placeholder="Event">
                         <input type="text" id="txt-location" placeholder="Location">
+                        <select id="select-option">
+                            <option value="any">Any date</option>
+                            <option value="today">Today</option>
+                            <option value="tomorrow">Tomorrow</option>
+                            <option value="this-weekend">This Weekend</option>
+                            <option value="this-week">This Week</option>
+                            <option value="this-month">This Month</option>
+                            <option value="next-month">Next Month</option>
+                            <option value="pick-date">Pick a Date</option>
+                        </select>
+                        <input id="input-date" type="date">
+                        <input type="button" value="Filter">
                     </form>
                 </div>
                 <!-- Gallery -->

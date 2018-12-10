@@ -439,3 +439,96 @@ body {
     transform: rotateZ(-45deg) translate3d(0, 0, 0);
     transition: transform .5s;
 }
+
+.search-bar {
+    form {
+        input {
+            padding: 4px;
+            width: 20%;
+            margin: 0 20px;
+            background-color: black;
+            border: none;
+            border-bottom: 2px solid yellow;
+            color: white;
+            outline: none;
+            transition-duration: .5s;
+        }
+
+        input:focus {
+            padding: 10px 4px;
+            transition-duration: .5s;
+        }
+
+        input[type="date"] {
+            display: none;
+            padding: 3px;
+            opacity: 0;
+        }
+
+        input[type="button"] {
+            width: 10%;
+            background-color: black;
+            border: 2px solid yellow;
+            font-weight: bold;
+            color: white;
+            padding: 5px 4px;
+        }
+
+        input[type="button"]:hover {
+            width: 10%;
+            background-color: yellow;
+            border: 2px solid yellow;
+            font-weight: bold;
+            color: black;
+            padding: 5px 4px;
+        }
+
+        select {
+            padding: 5px;
+            width: 20%;
+            margin: 0 20px;
+            background-color: black;
+            outline: none;
+            border: none;
+            border-bottom: 2px solid yellow;
+            color: white;
+        }
+
+        select:hover {
+            outline: none;
+        }
+    }
+}
+
+.event {
+    padding: 100px;
+
+    img {
+        width: 500px;
+    }
+
+    .details {
+        display: inline-block;
+        position: absolute;
+        padding: 0px 40px;
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .e-type {
+            margin: 0;
+            position: relative;
+
+            p {
+                display: inline;
+                background-color: black;
+                color: yellow;
+                padding: 2px 10px 6px;
+                font-weight: bold;
+                font-size: 15px;
+            }
+        }
+    }
+}

@@ -57,3 +57,13 @@ $("#btnExisting").click(function() {
         opacity: 0.92
     }, 500);
 });
+
+$("#select-option").on("change", function() {
+    if(this.value == "pick-date") {
+        $("#select-option").css('display', 'none');
+        
+        $("#input-date").css('display', 'inline-block').animate({
+            opacity: 1
+        }, 250);
+    }
+  });
