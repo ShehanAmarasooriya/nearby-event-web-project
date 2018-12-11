@@ -554,5 +554,38 @@ body {
                 font-size: 12px;
             }
         }
+
+        .event-detail {
+            border-left: 8px solid black;
+            background-color: yellow;
+            margin-top: 30px;
+            padding: 10px;
+            width: 600px;
+
+            p {
+                padding: 2px;
+                margin: 0 10px;
+                font-weight: bold;
+                font-size: 15px;
+            }
+        }
+
+        .description {
+            width: 630px;
+            text-align: justify;
+        }
+
+        input[type="submit"] {
+            background: none;
+            border: 2px solid black;
+            padding: 7px 45px;
+            font-weight: bold;
+            transition: background-color .3s ease-in-out;
+
+            &:hover {
+                background-color: yellow;
+                border: 2px solid black;
+            }
+        }
     }
 }
