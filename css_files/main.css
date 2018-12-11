@@ -40,6 +40,10 @@ body {
   background-color: rgba(0, 0, 0, 0.85) !important;
 }
 
+.bg-black-solid {
+  background-color: black;
+}
+
 .bg-yellow {
   background-color: yellow;
 }
@@ -91,6 +95,10 @@ body {
 
 .mt-3 {
   margin-top: 3em;
+}
+
+.mt-2 {
+  margin-top: 2em;
 }
 
 .container {
@@ -343,6 +351,7 @@ body {
 }
 
 .banner .banner-text {
+  color: yellow;
   font-size: 3em;
   margin: 0;
   padding: 0;
@@ -351,8 +360,8 @@ body {
 }
 
 .banner .banner-text span {
-  background-color: black;
-  color: yellow;
+  background-color: yellow;
+  color: black;
   padding: 0px 10px;
 }
 
@@ -636,5 +645,29 @@ body {
 .event .details input[type="submit"]:hover {
   background-color: yellow;
   border: 2px solid black;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer .main-section h1 {
+  margin: 0 0 8px;
+  font-size: 2.5em;
+}
+
+.footer .main-section p {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  background-color: black;
+  color: yellow;
+  display: inline;
+  padding: 6px 15px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
 }
 /*# sourceMappingURL=main.css.map */
