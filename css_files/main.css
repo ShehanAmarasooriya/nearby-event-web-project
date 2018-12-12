@@ -98,7 +98,7 @@ body {
 }
 
 .mt-2 {
-  margin-top: 2em;
+  margin-top: 2.5em;
 }
 
 .container {
@@ -731,6 +731,12 @@ body {
   color: black;
   display: inline-block;
   padding: 0px 10px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.footer .sub-section .social a:hover {
+  color: #323232;
 }
 
 .trademark {

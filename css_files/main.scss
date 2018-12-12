@@ -90,7 +90,7 @@ body {
 }
 
 .mt-2 {
-    margin-top: 2em;
+    margin-top: 2.5em;
 }
 
 .container {
@@ -678,6 +678,11 @@ body {
                 color: black;
                 display: inline-block;
                 padding: 0px 10px;
+                transition: all .4s ease;
+
+                &:hover {
+                    color: rgb(50, 50, 50);
+                }
             }
         }
     }
