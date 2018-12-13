@@ -122,6 +122,20 @@ body {
                 color: yellow;
                 transition-duration: 0.3s;
             }
+
+            input[type="submit"] {
+                color: white;
+                background: none;
+                border: none;
+                font-size: 15px;
+                font-weight: bold;
+
+                &:hover {
+                    transition-duration: 0.3s;
+                    color: yellow;
+                    cursor: pointer; 
+                }
+            }
         }
 
         li:last-child {
