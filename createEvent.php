@@ -18,18 +18,14 @@ if(isset($_POST["btnCreateEvent"])){
     $eventtype = mysqli_real_escape_string($conn, $_POST["eventtype"]);
     $participantsNo =  mysqli_real_escape_string($conn, $_POST["participantsNo"]);
     $des =  mysqli_real_escape_string($conn, $_POST["description"]);
-
-    $image = $_FILES["image"]["name"];
+    $image;
+    if($_FILES["image"]["name"]){
+        $image = $_FILES["image"]["name"];
+    }else{
+        $image = "sample.png";
+    }
     $target = "./upload/" . basename($_FILES["image"]["name"]);
-    echo("event : ".$ename."\n");
-    echo("loc : ".$loc."\n...........");
-    echo("sd : ".$sdate."\n.........");
-    echo("st : ".$stime."\n...........");
-    echo("edate : ".$edate."\n..........");
-    echo("etime : ".$etime."\n......");
-    echo("category : ".$category."\n.....");
-    echo("event type : ".$eventtype."\n.......");
-    echo("dec : ".$des);
+
 
     //check empty fields
    if(empty($ename) || empty($loc) || empty($sdate) || empty($stime) || empty($edate) || empty($etime) || empty($category) || empty($eventtype) || empty($des)){
@@ -44,17 +40,32 @@ if(isset($_POST["btnCreateEvent"])){
         redirect_to("createEvent.php");
         return;
     }
+    
+    $sql1 = "INSERT INTO event(event_name,description,category,event_create_datetime,event_start_date,event_start_time,event_end_date,event_end_time,location,image,author,event_type) 
+                VALUES('$ename', '$des','$category','$datetime','$sdate','$stime','$edate','$etime','$loc','$image','{$_SESSION["user_name"]}','$eventtype')";
 
-    $sql = "INSERT INTO event(event_name,description,category,event_create_datetime,event_start_date,event_start_time,event_end_date,event_end_time,location,image,author) 
-                VALUES('$ename', '$des','$category','$datetime','$sdate','$stime','$edate','$etime','$loc','$image','{$_SESSION["user_name"]}')";
-
+    
     //image move to upload
     move_uploaded_file($_FILES["image"]["tmp_name"], $target); 
-    if (query_execute($sql) == true) {
+    if (query_execute($sql1) == true) {
+        
+        if(!empty($participantsNo)){
+            $sql3 = "SELECT id FROM event ORDER BY id DESC LIMIT 1";
+            $rec = query_execute($sql3);
+            while($dr = mysqli_fetch_array($rec)){
+                $lastId = $dr["id"];
+                $sql2 = "INSERT INTO user_count(event_id,allow_participation,currnt_participation) 
+                    VALUES('$lastId','$participantsNo',0)";
+                query_execute($sql2);
+            }
+            
+        }
+        
         $_SESSION["successMsg"] = "Event Added Successfully";
         redirect_to("createEvent.php");
+
     }else{
-        $_SESSION["successMsg"] = "fucked";
+        $_SESSION["successMsg"] = "somthing went Wrong";
         redirect_to("createEvent.php");
     }
 }
@@ -83,7 +94,7 @@ if(isset($_POST["btnCreateEvent"])){
         <nav class="navbar bg-black-solid">
             <a href="./index.php"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
-                <li><a href="./browse-events.html">Browse Events</a></li>
+                <li><a href="./browse-events.php">Browse Events</a></li>
                 <li><a href="./createEvent.php">Create Event</a></li>
                 <li><a href="./contact.html">Contact</a></li>
                 <?php

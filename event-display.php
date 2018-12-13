@@ -23,7 +23,7 @@
         <nav class="navbar bg-black">
             <a href="./index.php"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
-                <li><a href="./browse-events.html">Browse Events</a></li>
+                <li><a href="./browse-events.php">Browse Events</a></li>
                 <li><input type="submit" value="Create Event" id="createEvent" name="createEvent"></li>
                 <li><a href="./contact.html">Contact</a></li>
                 <?php

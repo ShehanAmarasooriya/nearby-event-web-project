@@ -23,7 +23,7 @@
         <nav class="navbar">
             <a href="#"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
-                <li><a href="./browse-events.html">Browse Events</a></li>
+                <li><a href="./browse-events.php">Browse Events</a></li>
                 <li><a href="./createEvent.php">Create Event</a></li>
                 <li><a href="./contact.html">Contact</a></li>
                 <?php
