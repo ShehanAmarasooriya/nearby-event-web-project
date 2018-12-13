@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
+    <style type="text/css">
+           .additional p{
+               padding-right:5px;
+               padding-left:5px;
+           } 
+    </style>
 </head>
 <body>
     <!-- Main Container -->
@@ -91,7 +97,7 @@
                         <div class="caption">
                             <h3>Food & Drink</h3>
                             <div class="additional">
-                                <p>food drink food drink</p>
+                                <p> BEST GUIDE TO FOOD AND DRINK EVENTS IN SEATTLE</p>
                                <!-- <input type="submit" value="Explore" id="btnFoodDrink" name="btnFoodDrink">-->
                                <a href="browse-events.php?category=food_and_drink" id="btnFoodDrink" name="btnFoodDrink">Explore</a>
                             </div>
@@ -113,7 +119,7 @@
                         <div class="caption">
                             <h3>Concerts</h3>
                             <div class="additional">
-                                <p>food drink food drink</p>
+                                <p>SOMETIMES THEN CALLED A RECTICAL</p>
                                 <a href="browse-events.php?category=concerts">Explore</a>
                             </div>
                         </div>
@@ -130,7 +136,7 @@
                         <div class="caption">
                             <h3>Art & Drama</h3>
                             <div class="additional">
-                                <p>food drink food drink</p>
+                                <p>COLLABORATIVE FORM OF FINE ART</p>
                                 <a href="browse-events.php?category=art_and_drama">Explore</a>
                             </div>
                         </div>
@@ -147,7 +153,7 @@
                         <div class="caption">
                             <h3>Business</h3>
                             <div class="additional">
-                                <p>food drink food drink</p>
+                                <p>ACTIVITY OF MAKING ONE'S LIVING OR MAKING MONEY </p>
                                 <a href="browse-events.php?category=Business">Explore</a>
                             </div>
                         </div>
@@ -164,7 +170,7 @@
                         <div class="caption">
                             <h3>Exhibitions</h3>
                             <div class="additional">
-                                <p>food drink food drink</p>
+                                <p>TRADITIONALLY THE SPACE IN WHICH ART OBJECTS</p>
                                 <a href="browse-events.php?category=exhibition">Explore</a>
                             </div>
                         </div>
@@ -181,7 +187,7 @@
                         <div class="caption">
                             <h3>Meetups</h3>
                             <div class="additional">
-                                <p>food drink food drink</p>
+                                <p>YOU CAN DO MORE OF WHAT MATTERS TO YOU</p>
                                 <a href="browse-events.php?category=meetups">Explore</a>
                             </div>
                         </div>
@@ -198,7 +204,7 @@
                         <div class="caption">
                             <h3>Party</h3>
                             <div class="additional">
-                                <p>food drink food drink</p>
+                                <p>GET THE PARTY STARTED! FIND EVERYTHING YOU NEED ON YOUR SHOPPING LIST</p>
                                 <a href="browse-events.php?category=party">Explore</a>
                             </div>
                         </div>
@@ -215,7 +221,7 @@
                         <div class="caption">
                             <h3>Sports</h3>
                             <div class="additional">
-                                <p>food drink food drink</p>
+                                <p>COMPETITIVE PHYSICAL ACTIVITY OR GAMES WHICH, THROUGH CASUAL OR ORGANISED PARTICIPATION</p>
                                 <a href="browse-events.php?category=sports">Explore</a>
                             </div>
                         </div>
@@ -232,7 +238,7 @@
                         <div class="caption">
                             <h3>Health & Wellness</h3>
                             <div class="additional">
-                                <p>food drink food drink</p>
+                                <p>EXPLORE CURRENT CONCEPTS IN HEALTH, EXERCISE, AND WELLNESS </p>
                                 <a href="browse-events.php?category=health_and_wellness">Explore</a>
                             </div>
                         </div>
@@ -249,7 +255,7 @@
                         <div class="caption">
                             <h3>Technology</h3>
                             <div class="additional">
-                                <p>food drink food drink</p>
+                                <p>KNOWLEDGE OF TECHNIQUES, PROCESSES, AND THE LIKE </p>
                                 <a href="browse-events.php?category=technology">Explore</a>
                             </div>
                         </div>
