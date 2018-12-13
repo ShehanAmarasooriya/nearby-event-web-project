@@ -82,13 +82,13 @@
                     echo err_msg();
                     echo exception_msg(); ?>
             <form action="login.php"  method="post" enctype="multipart/form-data">
-                <input type="text" id="email" name="email" placeholder="Email"
+                <input type="text" id="email" name="email" placeholder="Email" onblur="validate(this)" required
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="500"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="password" id="password" name="password" placeholder="Password"
+                <input type="password" id="password" name="password" placeholder="Password" onblur="validate(this)" required
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="600"

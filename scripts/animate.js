@@ -30,3 +30,23 @@ function selectType() {
         document.getElementById("participantsNo").disabled = true;
     }
 }
+
+function validate(x) {
+    if(x.value == "") {
+        x.style.borderColor = "#ff0000";
+    } else {
+        x.style.borderColor = "#65ff00";
+    }
+}
+
+function matchPass(x) {
+    val = document.getElementById("signup_password");
+
+    if(x.value != val.value) {
+        x.style.borderColor = "#ff0000";
+        val.style.borderColor = "#ff0000";
+        alert("Please enter the same password");
+    } else {
+        x.style.borderColor = "#65ff00";
+    }
+}

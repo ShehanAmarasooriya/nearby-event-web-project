@@ -94,33 +94,31 @@
                     echo exception_msg(); ?>
                 </div>
             <form action="signup.php"  method="post" enctype="multipart/form-data">
-                <input type="text" id="user_name" name="user_name" placeholder="User Name"
+                <input type="text" id="user_name" name="user_name" placeholder="User Name" onblur="validate(this)" required
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="500"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="text" id="signup_email" name="signup_email" placeholder="Email"
+                <input type="text" id="signup_email" name="signup_email" placeholder="Email" onblur="validate(this)" required
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="500"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="password" id="signup_password" name="signup_password" placeholder="Password"
+                <input type="password" id="signup_password" name="signup_password" placeholder="Password" onblur="validate(this)" required
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="600"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="password" id="signup_password_confirm" name="signup_password_confirm" placeholder="Confirm Password"
+                <input type="password" id="signup_password_confirm" name="signup_password_confirm" placeholder="Confirm Password" onblur="matchPass(this)" required
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="600"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="submit" id="btn_signup" name="btn_signup" value="Sign Up"
-                    
-                >
+                <input type="submit" id="btn_signup" name="btn_signup" value="Sign Up">
             </form>
             <a href="./login.php"
                  data-sal-duration="1200"
