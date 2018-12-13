@@ -24,7 +24,7 @@
             <a href="./index.php"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
                 <li><a href="./browse-events.html">Browse Events</a></li>
-                <li><a href="./createEvent.html">Create Events</a></li>
+                <li><input type="submit" value="Create Event" id="createEvent" name="createEvent"></li>
                 <li><a href="./contact.html">Contact</a></li>
                 <li><a href="./login.php">Log In</a></li>
             </ul>
