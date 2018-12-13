@@ -1102,4 +1102,166 @@ body {
   -webkit-transition: color .5s ease;
   transition: color .5s ease;
 }
+
+.create-event {
+  text-align: center;
+  height: 81vh;
+  border-bottom: 10vh solid black;
+}
+
+.create-event h1 {
+  text-transform: uppercase;
+  font-size: 3em;
+  background-color: black;
+  color: yellow;
+  padding-bottom: 5px;
+  width: 500px;
+  position: relative;
+  margin: 2em auto 30px auto;
+}
+
+.create-event p {
+  margin-top: 5px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 2.5em;
+}
+
+.create-event form {
+  text-align: center;
+}
+
+.create-event form div {
+  margin: 5px;
+}
+
+.create-event form input {
+  background: none;
+  border: 3px solid #969600;
+  padding: 8px 40px;
+  text-align: center;
+  font-size: 15px;
+  outline: none;
+}
+
+.create-event form input:focus {
+  border-color: black;
+  -webkit-transition: border-color .4s ease;
+  transition: border-color .4s ease;
+}
+
+.create-event form input[type="date"] {
+  background: none;
+  border: 3px solid #969600;
+  padding: 5.7px 52.5px;
+  text-align: center;
+  font-size: 15px;
+  outline: none;
+}
+
+.create-event form input[type="date"]:focus {
+  border-color: black;
+  -webkit-transition: border-color .4s ease;
+  transition: border-color .4s ease;
+}
+
+.create-event form input[type="time"] {
+  background: none;
+  border: 3px solid #969600;
+  padding: 5.6px 79px;
+  text-align: center;
+  font-size: 15px;
+  outline: none;
+}
+
+.create-event form input[type="time"]:focus {
+  border-color: black;
+  -webkit-transition: border-color .4s ease;
+  transition: border-color .4s ease;
+}
+
+.create-event form input[type="file"] {
+  display: none;
+}
+
+.create-event form .custom-file-upload {
+  border: 3px solid #969600;
+  display: block;
+  padding: 5.6px 79px;
+  width: 365px;
+  margin: 0 auto 15px;
+  font-weight: bold;
+  color: #969600;
+  cursor: pointer;
+}
+
+.create-event form input[type="submit"] {
+  color: black;
+  font-weight: bold;
+}
+
+.create-event form input[type="submit"]:hover {
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  background-color: black;
+  color: yellow;
+  border-color: black;
+}
+
+.create-event form select {
+  background: none;
+  border: 3px solid #969600;
+  padding: 7px 45px;
+  text-align: center;
+  font-size: 15px;
+  outline: none;
+}
+
+.create-event form select:hover {
+  outline: none;
+  background: none;
+}
+
+.create-event form select:focus {
+  border-color: black;
+  -webkit-transition: border-color .4s ease;
+  transition: border-color .4s ease;
+}
+
+.create-event form .parti {
+  width: 70px;
+  height: 32.5px;
+  padding: 0;
+}
+
+.create-event form textarea {
+  margin: 5px;
+  width: 502px;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: none;
+  border: 4px solid #969600;
+  outline: none;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.create-event form textarea:focus {
+  border: 4px solid black;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.create-event a {
+  text-decoration: none;
+  color: #969600;
+}
+
+.create-event a:hover {
+  color: black;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+}
 /*# sourceMappingURL=main.css.map */

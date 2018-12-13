@@ -20,3 +20,13 @@ $("#select-option").on("change", function() {
         }, 250);
     }
   });
+
+function selectType() {
+    val = document.getElementById("eventtype").value;
+
+    if (val == "closedEvent") {
+        document.getElementById("participantsNo").disabled = false;
+    } else {
+        document.getElementById("participantsNo").disabled = true;
+    }
+}
