@@ -17,36 +17,30 @@
 
         <!-- Navigation bar -->
         <nav class="navbar bg-black">
-            <a href="./index.html"><img src="./Resources/Images/eblogo.png"></a>
+            <a href="./index.php"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
                 <li><a href="./browse-events.html">Browse Events</a></li>
                 <li><a href="./createEvent.html">Create Events</a></li>
                 <li><a href="./contact.html">Contact</a></li>
-                <li><a href="#">Log In</a></li>
+                <li><a href="./login.php">Log In</a></li>
             </ul>
         </nav>
 
-        <div class="container signup bg-yellow">
+        <div class="container login bg-yellow">
             <h1
                 data-sal-duration="800"
                 data-sal="slide-up"
                 data-sal-delay="400"
                 data-sal-easing="ease-out-bounce"
-            >Let's get started</h1>
+            >Login</h1>
             <p
                 data-sal-duration="800"
                 data-sal="slide-down"
                 data-sal-delay="400"
                 data-sal-easing="ease-out-bounce"
-            >Please enter your email to sign up</p>
+            >Please enter your email and password to log in.</p>
             <form>
-                <input type="text" id="user-name" placeholder="User Name"
-                    data-sal-duration="1200"
-                    data-sal="fade"
-                    data-sal-delay="500"
-                    data-sal-easing="ease-out-bounce"
-                >
-                <input type="text" id="contact-name" placeholder="Email"
+                <input type="text" id="email" placeholder="Email"
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="500"
@@ -58,25 +52,19 @@
                     data-sal-delay="600"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="password" id="c-password" placeholder="Confirm Password"
-                    data-sal-duration="1200"
-                    data-sal="fade"
-                    data-sal-delay="600"
-                    data-sal-easing="ease-out-bounce"
-                >
-                <input type="submit" id="signup" value="Sign Up"
+                <input type="submit" id="login" value="Login"
                     data-sal-duration="1200"
                     data-sal="slide-up"
                     data-sal-delay="400"
                     data-sal-easing="ease-out-bounce"
                 >
             </form>
-            <a href="./login.html"
+            <a href="./signup.php"
                  data-sal-duration="1200"
                 data-sal="slide-up"
                 data-sal-delay="400"
                 data-sal-easing="ease-out-bounce"
-            >Have an existing account</a>
+            >Create a new account</a>
         </div>
     </div>
 
