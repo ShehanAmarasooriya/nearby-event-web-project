@@ -29,6 +29,17 @@
         }
     }
 
+    function isEventNameAlredyExist($name){
+        $sql = "SELECT * FROM event WHERE event_name = '$name'";
+        $res = query_execute($sql);
+
+        if(mysqli_fetch_assoc($res)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     function loginAttempt($email, $pass){
         $sql = "SELECT * FROM login WHERE email='$email' AND password='$pass'";
         $rec = query_execute($sql);

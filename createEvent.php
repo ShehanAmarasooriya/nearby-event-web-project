@@ -7,24 +7,57 @@
 
 if(isset($_POST["btnCreateEvent"])){
 
+    $datetime = strftime("%B-%d-%Y %H:%M:%S", time()); //grap btn click time
     $ename = mysqli_real_escape_string($conn, $_POST["eventName"]);
     $loc = mysqli_real_escape_string($conn, $_POST["location"]);
     $sdate = mysqli_real_escape_string($conn, $_POST["sdate"]);
     $stime = mysqli_real_escape_string($conn, $_POST["stime"]);
     $edate = mysqli_real_escape_string($conn, $_POST["edate"]);
-    $etime = mysqli_real_escape_string($conn, $_POST["e~time"]);
+    $etime = mysqli_real_escape_string($conn, $_POST["etime"]);
+    $category =  mysqli_real_escape_string($conn, $_POST["category"]);
+    $eventtype = mysqli_real_escape_string($conn, $_POST["eventtype"]);
+    $participantsNo =  mysqli_real_escape_string($conn, $_POST["participantsNo"]);
+    $des =  mysqli_real_escape_string($conn, $_POST["description"]);
 
+    $image = $_FILES["image"]["name"];
+    $target = "./upload/" . basename($_FILES["image"]["name"]);
+    echo("event : ".$ename."\n");
+    echo("loc : ".$loc."\n...........");
+    echo("sd : ".$sdate."\n.........");
+    echo("st : ".$stime."\n...........");
+    echo("edate : ".$edate."\n..........");
+    echo("etime : ".$etime."\n......");
+    echo("category : ".$category."\n.....");
+    echo("event type : ".$eventtype."\n.......");
+    echo("dec : ".$des);
 
+    //check empty fields
+   if(empty($ename) || empty($loc) || empty($sdate) || empty($stime) || empty($edate) || empty($etime) || empty($category) || empty($eventtype) || empty($des)){
+        $_SESSION["errMsg"] = "Empty not allowed";
+        redirect_to("createEvent.php");
+            return;
+    }
+
+    //check event name is already there
+    if(isEventNameAlredyExist($ename)){
+        $_SESSION["errMsg"] = "Event name is already there";
+        redirect_to("createEvent.php");
+        return;
+    }
+
+    $sql = "INSERT INTO event(event_name,description,category,event_create_datetime,event_start_date,event_start_time,event_end_date,event_end_time,location,image,author) 
+                VALUES('$ename', '$des','$category','$datetime','$sdate','$stime','$edate','$etime','$loc','$image','{$_SESSION["user_name"]}')";
+
+    //image move to upload
+    move_uploaded_file($_FILES["image"]["tmp_name"], $target); 
+    if (query_execute($sql) == true) {
+        $_SESSION["successMsg"] = "Event Added Successfully";
+        redirect_to("createEvent.php");
+    }else{
+        $_SESSION["successMsg"] = "fucked";
+        redirect_to("createEvent.php");
+    }
 }
-
-
-
-
-
-
-
-
-
 
 
 ?>
@@ -64,8 +97,13 @@ if(isset($_POST["btnCreateEvent"])){
 
         <div class="container create-event bg-yellow">
             <h1>Create an event</h1>
+            <div><?php echo success_msg();
+                    echo warn_msg();
+                    echo err_msg();
+                    echo exception_msg(); ?>
+                </div>
             <div>
-                <form action="createEvent.php" method = "POST"  enctype="multipart/form-data">
+                <form action="createEvent.php" method = "post"  enctype="multipart/form-data">
                     <div>
                         <input type="text" id="eventName" name="eventName" placeholder="Event Name">
                         <input type="text" id="location" name="location" placeholder="Location">
@@ -79,7 +117,7 @@ if(isset($_POST["btnCreateEvent"])){
                         <input placeholder="End Time" type="text" onfocus="(this.type='Time')" onblur="(this.type='text')" id="etime" name="etime">
                     </div>
                     <div>
-                        <select>
+                        <select  name="category" id="category">
                             <option value="">Event Category</option>
                             <option value="food_and_drink">Food & Drink</option>
                             <option value="concerts">Concerts</option>
@@ -92,19 +130,21 @@ if(isset($_POST["btnCreateEvent"])){
                             <option value="health_and_wellness">Health & Wellness</option>
                             <option value="technology">Technology</option>
                         </select>
-                        <select id="eventtype" onchange="selectType()">
+                        <select id="eventtype" name="eventtype" ><!--onchange="selectType()"-->
                             <option value="">Event Type</option>
                             <option value="openEvent">Open Event</option>
                             <option value="closedEvent">Closed Event</option>
                         </select>
-                        <input disabled class="parti" type="text" placeholder="Count" id="participantsNo" name="participantsNo">
+                        <input class="parti" type="text" placeholder="Count" id="participantsNo" name="participantsNo">
                     </div>
-                    <textarea placeholder="Description" id="description" id="description"></textarea>
+                    <textarea placeholder="Description" id="description" name="description">
+
+                    </textarea>
                     <label for="file-upload" class="custom-file-upload">
                         <i class="fa fa-cloud-upload"></i> Upload Image
                     </label>
-                    <input id="file-upload" type="file"/>
-                    <input type="submit" id="btnCreateEvent" name="btnCreateEvent">
+                    <input id="file-upload" type="file" name="image" id="image"/>
+                    <input type="submit" id="btnCreateEvent" name="btnCreateEvent" value = "Add Event">
                 </form>
             </div>
         </div>
