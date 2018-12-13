@@ -37,9 +37,9 @@
                 <li><a href="./contact.html">Contact</a></li>
                 <?php
                     if(isset($_SESSION['user_id'])) { ?>
-                <li><a id="login_btn"><?php echo $_SESSION["user_name"] ?></a></li>
+                <li><a id="logout_btn"><?php echo $_SESSION["user_name"] ?></a></li>
                 <?php } else { ?>
-                <li><a id="login_btn" href="./login.php">Log In</a></li>
+                <li><a id="login_btn"" href="./login.php">Log In</a></li>
                 <?php } ?>
             </ul>
         </nav>

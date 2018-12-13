@@ -71,63 +71,50 @@
                         <option value="pick-date">Pick a Date</option>
                     </select>
                     <input id="input-date" type="date">
-                    <input type="button" id="search" name="search" value="Filter">
+                    <input type="button" id="search" name="search" value="Filter" onclick=>
                 </form>
             </div>
             <!-- Gallery -->
             <div class="gallery mt-3">
-                <?php 
-                    if (isset($_GET["search"]) && isset($_GET["category"])) {
-                        $event = $_GET["txt-event"];
-                        $loc = $_GET["txt-location"];
-                        $viewQuery = "SELECT * FROM event  
-                                    WHERE event_name LIKE '%$event%' OR 
-                                    location LIKE '%$loc%' AND category = '{$_GET["category"]}' ORDER BY event_start_date DESC";
-                    } else if(isset($_GET["search"]) ){
-                        $viewQuery =  "SELECT * FROM event  
-                        WHERE event_name LIKE '%$event%' OR 
-                        location LIKE '%$loc%' ORDER BY event_start_date DESC";
-                    }else if( isset($_GET["category"])){
-                        $viewQuery = "SELECT * FROM event  
-                                    WHERE category = '{$_GET["category"]}' ORDER BY event_start_date DESC";
-                    }
-                    else{
-                        $viewQuery = "SELECT * FROM event ORDER BY event_start_date DESC ";
-                    }
-                    echo($viewQuery);
+            <?php 
+            if(isset($_GET["category"])){
+                $sql = "SELECT * FROM event WHERE category='{$_GET["category"]}' ORDER BY event_start_date DESC";
+            }else{
+                $sql = "SELECT * FROM event ORDER BY event_start_date DESC";
+            }
+                    
+            $res = query_execute($sql);
+
+            while($dr = mysqli_fetch_array($res)){
+                $id = $dr["id"];
+                $eventname = $dr["event_name"];
+                $loc = $dr["location"];
+                $sdate = $dr["event_start_date"];
+                $stime = $dr["event_start_time"]; 
+                $image =  $dr["image"];          
                 
-                    while ($dr = mysqli_fetch_array($viewQuery)) {
-                    $id = $dr["id"];
-                    $eventname = $dr["event_name"];
-                    $loc = $dr["location"];
-                    $sdate = $dr["event_start_date"];
-                    $stime = $dr["event_start_time"]; 
-                    $image =  $dr["image"]; 
-    
-                        ?>
-                
-                ?>
-            
-                <div 
-                    data-sal-duration="800"
-                    data-sal="slide-up"
-                    data-sal-delay="400"
-                    data-sal-easing="ease-out-bounce" 
-                >
-                    <div class="card">
-                        <img src="./upload/<?php echo $image; ?>">
-                        <div class="caption">
-                            <h3>Event Name</h3>
-                            <div class="additional">
+            ?>
+
+            <div 
+                data-sal-duration="800"
+                data-sal="slide-up"
+                data-sal-delay="400"
+                data-sal-easing="ease-out-bounce" 
+            >
+                <div class="card">
+                    <img src="./upload/<?php echo $image; ?>">
+                    <div class="caption">
+                        <h3><?php echo(htmlentities($eventname));?></h3>
+                        <div class="additional">
                             <p>Location: <?php echo(htmlentities($loc));?><br>Date : <?php echo(htmlentities($sdate));?><br>Time : <?php echo(htmlentities($stime));?></p>
                             <a href="event-display.php?id=<?php echo $id; ?>">Info</a>
-                                <input type="submit" value="Mark Going">
-                            </div>
+                            <input type="submit" value="Mark Going">
                         </div>
                     </div>
                 </div>
-
-                    <?php }?>
+            </div>
+            <?php }?>
+    
                     
            
            
