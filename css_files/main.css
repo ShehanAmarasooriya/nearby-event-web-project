@@ -253,20 +253,19 @@ body {
   margin-bottom: 20px;
 }
 
-.gallery .card .caption .additional input[type="submit"] {
+.gallery .card .caption .additional a {
   display: inline-block;
   background: white;
   text-transform: uppercase;
   text-decoration: none;
   padding: 10px 14px 6px;
-  font-weight: bold;
   color: black;
   -webkit-transition-duration: .4s;
           transition-duration: .4s;
   border: 1px solid white;
 }
 
-.gallery .card .caption .additional input[type="submit"]:hover {
+.gallery .card .caption .additional a:hover {
   background: black;
   color: white;
   -webkit-transition-duration: .4s;
@@ -274,7 +273,7 @@ body {
   border: 1px solid black;
 }
 
-.gallery .card .caption .additional input[type="submit"]:last-child {
+.gallery .card .caption .additional input[type="submit"] {
   background: none;
   border: 1px solid white;
   color: white;
@@ -282,9 +281,10 @@ body {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   padding: 10px 14px 6px;
+  font-weight: bold;
 }
 
-.gallery .card .caption .additional input[type="submit"]:last-child:hover {
+.gallery .card .caption .additional input[type="submit"]:hover {
   background: white;
   color: black;
 }

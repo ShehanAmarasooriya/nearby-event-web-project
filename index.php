@@ -289,7 +289,7 @@
                 $res = query_execute($sql);
 
                 while($dr = mysqli_fetch_array($res)){
-
+                    $id = $dr["id"];
                     $eventname = $dr["event_name"];
                     $loc = $dr["location"];
                     $sdate = $dr["event_start_date"];
@@ -310,7 +310,7 @@
                             <h3><?php echo(htmlentities($eventname));?></h3>
                             <div class="additional">
                                 <p><?php echo(htmlentities($loc));?><br><?php echo(htmlentities($sdate));?><br><?php echo(htmlentities($stime));?></p>
-                                <input type="submit" value="Info">
+                                <a href="event-display.php?id=<?php echo $id; ?>">Info</a>
                                 <input type="submit" value="Mark Going">
                             </div>
                         </div>

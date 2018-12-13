@@ -1,3 +1,7 @@
+<?php require_once("./include/DB.php"); ?>
+<?php require_once("./include/session.php"); ?>
+<?php require_once("./include/function.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +21,43 @@
 
         <!-- Navigation bar -->
         <nav class="navbar bg-black">
-            <a href="./index.html"><img src="./Resources/Images/eblogo.png"></a>
+            <a href="./index.php"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
                 <li><a href="./browse-events.html">Browse Events</a></li>
                 <li><a href="./createEvent.html">Create Events</a></li>
                 <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./login.html">Log In</a></li>
+                <li><a href="./login.php">Log In</a></li>
             </ul>
         </nav>
+        <?php 
+        
+        $eventIDFromURL = $_GET["id"];
+        $sql = "SELECT * FROM event WHERE id='$eventIDFromURL'";
+        $res = query_execute($sql);
+
+        while($dr = mysqli_fetch_array($res)){
+            $ename = $dr["event_name"];
+            $dec = $dr["description"];
+            $category = $dr["category"];
+            $cdate = $dr["event_create_datetime"];
+            $sdate = $dr["event_start_date"];
+            $stime = $dr["event_start_time"];
+            $edate = $dr["event_end_date"];
+            $etime = $dr["event_end_time"];
+            $loc = $dr["location"];
+            if(!empty($dr["image"])){
+                $image = $dr["image"];
+            }else{
+                $image = "business.png";
+            }
+            
+        
+        
+        
+        ?>
+
         <div class="container event mt-3">
-            <img src="./Resources/Images/business.png"
+            <img src="./upload/<?php echo $image; ?>"
                 data-sal-duration="800"
                 data-sal="slide-down"
                 data-sal-delay="600"
@@ -38,14 +69,22 @@
                     data-sal="slide-up"
                     data-sal-delay="600"
                     data-sal-easing="ease-out-bounce"
-                >Event Name</h1>
+                ><?php echo(htmlentities($ename));?></h1>
                 <div class="e-type">
+
                     <p
                         data-sal-duration="800"
                         data-sal="fade"
                         data-sal-delay="700"
                         data-sal-easing="ease-out-bounce"
-                    >category</p>
+                    ><?php echo(htmlentities($category));?></p>
+                    <!--event type here-->
+                    <p
+                        data-sal-duration="800"
+                        data-sal="fade"
+                        data-sal-delay="700"
+                        data-sal-easing="ease-out-bounce"
+                    ><?php echo(htmlentities($category));?></p>
                 </div>
                 <div class="event-detail"
                     data-sal-duration="1000"
@@ -53,9 +92,11 @@
                     data-sal-delay="800"
                     data-sal-easing="ease-out-bounce"
                 >
-                    <p>Venue: [Venue]</p>
-                    <p>Date: [Date]</p>
-                    <p>Time: [Time]</p>
+                    <p>Venue: <?php echo(htmlentities($loc));?></p>
+                    <p>Start Date: <?php echo(htmlentities($sdate));?></p>
+                    <p>Start Time: <?php echo(htmlentities($stime));?></p>
+                    <p>End Date: <?php echo(htmlentities($edate));?></p>
+                    <p>End Time: <?php echo(htmlentities($etime));?></p>
                 </div>
                 <div class="description"
                     data-sal-duration="1000"
@@ -63,12 +104,7 @@
                     data-sal-delay="800"
                     data-sal-easing="ease-out-bounce"
                 >
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet similique dolorum explicabo omnis aperiam exercitationem,
-                    sequi adipisci quidem atque ipsam enim odit necessitatibus quo consequuntur quis porro officia dicta. Maxime! Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Alias praesentium ratione minima dignissimos officiis earum vitae aut repellendus,
-                    suscipit hic repudiandae. Modi laboriosam tempore eveniet corrupti ab repellat neque quia. Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Nulla autem sint possimus? Unde ad numquam dicta similique, velit temporibus incidunt, facilis saepe neque
-                    libero laborum dolor dolores ducimus quidem tempore?</p>
+                    <p><?php echo(htmlentities($dec));?></p>
                 </div>
                 <div
                     data-sal-duration="800"
@@ -80,6 +116,9 @@
                 </div>
             </div>
         </div>
+
+        <?php }?>
+
     </div>
 
     <!-- footer-->
