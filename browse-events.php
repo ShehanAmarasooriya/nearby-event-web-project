@@ -24,7 +24,7 @@
 
         <!-- Navigation bar -->
         <nav class="navbar bg-black">
-            <a href="./index.html"><img src="./Resources/Images/eblogo.png"></a>
+            <a href="./index.php"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
                 <li><a href="./browse-events.php">Browse Events</a></li>
                 <li><a href="./createEvent.php">Create Event</a></li>
@@ -76,7 +76,37 @@
             </div>
             <!-- Gallery -->
             <div class="gallery mt-3">
+                <?php 
+                    if (isset($_GET["search"]) && isset($_GET["category"])) {
+                        $event = $_GET["txt-event"];
+                        $loc = $_GET["txt-location"];
+                        $viewQuery = "SELECT * FROM event  
+                                    WHERE event_name LIKE '%$event%' OR 
+                                    location LIKE '%$loc%' AND category = '{$_GET["category"]}' ORDER BY event_start_date DESC";
+                    } else if(isset($_GET["search"]) ){
+                        $viewQuery =  "SELECT * FROM event  
+                        WHERE event_name LIKE '%$event%' OR 
+                        location LIKE '%$loc%' ORDER BY event_start_date DESC";
+                    }else if( isset($_GET["category"])){
+                        $viewQuery = "SELECT * FROM event  
+                                    WHERE category = '{$_GET["category"]}' ORDER BY event_start_date DESC";
+                    }
+                    else{
+                        $viewQuery = "SELECT * FROM event ORDER BY event_start_date DESC ";
+                    }
+                    echo($viewQuery);
                 
+                    while ($dr = mysqli_fetch_array($viewQuery)) {
+                    $id = $dr["id"];
+                    $eventname = $dr["event_name"];
+                    $loc = $dr["location"];
+                    $sdate = $dr["event_start_date"];
+                    $stime = $dr["event_start_time"]; 
+                    $image =  $dr["image"]; 
+    
+                        ?>
+                
+                ?>
             
                 <div 
                     data-sal-duration="800"
@@ -90,14 +120,14 @@
                             <h3>Event Name</h3>
                             <div class="additional">
                             <p>Location: <?php echo(htmlentities($loc));?><br>Date : <?php echo(htmlentities($sdate));?><br>Time : <?php echo(htmlentities($stime));?></p>
-                                <input type="submit" value="Info">
+                            <a href="event-display.php?id=<?php echo $id; ?>">Info</a>
                                 <input type="submit" value="Mark Going">
                             </div>
                         </div>
                     </div>
                 </div>
 
-
+                    <?php }?>
                     
            
            
