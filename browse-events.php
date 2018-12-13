@@ -1,3 +1,10 @@
+<?php require_once("./include/DB.php"); ?>
+<?php require_once("./include/session.php"); ?>
+<?php require_once("./include/function.php"); ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +29,12 @@
                 <li><a href="./browse-events.php">Browse Events</a></li>
                 <li><a href="./createEvent.php">Create Event</a></li>
                 <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./login.html">Log In</a></li>
+                <?php
+                    if(isset($_SESSION['user_id'])) { ?>
+                <li><a id="login_btn"><?php echo $_SESSION["user_name"] ?></a></li>
+                <?php } else { ?>
+                <li><a id="login_btn" href="./login.php">Log In</a></li>
+                <?php } ?>
             </ul>
         </nav>
 
@@ -43,9 +55,11 @@
 
             <!-- Search bar -->
             <div class="container bg-black-solid search-bar">
-                <form>
-                    <input type="text" id="txt-event" placeholder="Event">
-                    <input type="text" id="txt-location" placeholder="Location">
+                <form action="browse-event.php"  >
+                    <input type="text" id="txt-event" name = "txt-event" placeholder="Event">
+                    <input type="text" id="txt-location" name= "txt-location" placeholder="Location">
+
+
                     <select id="select-option">
                         <option value="any">Any date</option>
                         <option value="today">Today</option>
@@ -57,11 +71,13 @@
                         <option value="pick-date">Pick a Date</option>
                     </select>
                     <input id="input-date" type="date">
-                    <input type="button" value="Filter">
+                    <input type="button" id="search" name="search" value="Filter">
                 </form>
             </div>
             <!-- Gallery -->
             <div class="gallery mt-3">
+                
+            
                 <div 
                     data-sal-duration="800"
                     data-sal="slide-up"
@@ -69,89 +85,22 @@
                     data-sal-easing="ease-out-bounce" 
                 >
                     <div class="card">
-                        <img src="./Resources/Images/sample.png">
+                        <img src="./upload/<?php echo $image; ?>">
                         <div class="caption">
                             <h3>Event Name</h3>
                             <div class="additional">
-                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
+                            <p>Location: <?php echo(htmlentities($loc));?><br>Date : <?php echo(htmlentities($sdate));?><br>Time : <?php echo(htmlentities($stime));?></p>
                                 <input type="submit" value="Info">
                                 <input type="submit" value="Mark Going">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div 
-                    data-sal-duration="800"
-                    data-sal="slide-up"
-                    data-sal-delay="500"
-                    data-sal-easing="ease-out-bounce" 
-                >
-                    <div class="card">
-                        <img src="./Resources/Images/sample.png">
-                        <div class="caption">
-                            <h3>Event Name</h3>
-                            <div class="additional">
-                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                <input type="submit" value="Info">
-                                <input type="submit" value="Mark Going">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div 
-                    data-sal-duration="800"
-                    data-sal="slide-up"
-                    data-sal-delay="600"
-                    data-sal-easing="ease-out-bounce" 
-                >
-                    <div class="card">
-                        <img src="./Resources/Images/sample.png">
-                        <div class="caption">
-                            <h3>Event Name</h3>
-                            <div class="additional">
-                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                <input type="submit" value="Info">
-                                <input type="submit" value="Mark Going">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div 
-                    data-sal-duration="800"
-                    data-sal="slide-up"
-                    data-sal-delay="700"
-                    data-sal-easing="ease-out-bounce" 
-                >
-                    <div class="card">
-                        <img src="./Resources/Images/sample.png">
-                        <div class="caption">
-                            <h3>Event Name</h3>
-                            <div class="additional">
-                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                <input type="submit" value="Info">
-                                <input type="submit" value="Mark Going">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div 
-                    data-sal-duration="800"
-                    data-sal="slide-up"
-                    data-sal-delay="800"
-                    data-sal-easing="ease-out-bounce" 
-                >
-                    <div class="card">
-                        <img src="./Resources/Images/sample.png">
-                        <div class="caption">
-                            <h3>Event Name</h3>
-                            <div class="additional">
-                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                <input type="submit" value="Info">
-                                <input type="submit" value="Mark Going">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+                    
+           
+           
             </div>
         </div>
     </div>
