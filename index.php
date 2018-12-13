@@ -1,3 +1,7 @@
+<?php require_once("./include/DB.php"); ?>
+<?php require_once("./include/session.php"); ?>
+<?php require_once("./include/function.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +26,7 @@
                 <li><a href="./browse-events.html">Browse Events</a></li>
                 <li><a href="./createEvent.html">Create Events</a></li>
                 <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./login.html">Log In</a></li>
+                <li><a href="./login.php">Log In</a></li>
             </ul>
         </nav>
 
@@ -67,6 +71,7 @@
                 data-sal-easing="ease-out-bounce"
             >Find out the events in the moods for...</h3>
             <div class="gallery">
+                
                 <div 
                     data-sal-duration="800"
                     data-sal="slide-up"
@@ -84,6 +89,10 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
                 <div
                     data-sal-duration="800"
                     data-sal="slide-up"
@@ -273,6 +282,22 @@
 
             <!-- Recent Events Gallery -->
             <div class="gallery mt-3">
+                <!--event box-->
+                <?php 
+            
+                $sql = "SELECT * FROM event ORDER BY event_start_date DESC LIMIT 5";
+                $res = query_execute($sql);
+
+                while($dr = mysqli_fetch_array($res)){
+
+                    $eventname = $dr["event_name"];
+                    $loc = $dr["location"];
+                    $sdate = $dr["event_start_date"];
+                    $stime = $dr["event_start_time"]; 
+                    $image =  $dr["image"];          
+                    
+                ?>
+
                 <div 
                     data-sal-duration="800"
                     data-sal="slide-up"
@@ -280,89 +305,22 @@
                     data-sal-easing="ease-out-bounce" 
                 >
                     <div class="card">
-                        <img src="./Resources/Images/sample.png">
+                        <img src="./upload/<?php echo $image; ?>">
                         <div class="caption">
-                            <h3>Event Name</h3>
+                            <h3><?php echo(htmlentities($eventname));?></h3>
                             <div class="additional">
-                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
+                                <p><?php echo(htmlentities($loc));?><br><?php echo(htmlentities($sdate));?><br><?php echo(htmlentities($stime));?></p>
                                 <input type="submit" value="Info">
                                 <input type="submit" value="Mark Going">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div 
-                    data-sal-duration="800"
-                    data-sal="slide-up"
-                    data-sal-delay="500"
-                    data-sal-easing="ease-out-bounce" 
-                >
-                    <div class="card">
-                        <img src="./Resources/Images/sample.png">
-                        <div class="caption">
-                            <h3>Event Name</h3>
-                            <div class="additional">
-                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                <input type="submit" value="Info">
-                                <input type="submit" value="Mark Going">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div 
-                    data-sal-duration="800"
-                    data-sal="slide-up"
-                    data-sal-delay="600"
-                    data-sal-easing="ease-out-bounce" 
-                >
-                    <div class="card">
-                        <img src="./Resources/Images/sample.png">
-                        <div class="caption">
-                            <h3>Event Name</h3>
-                            <div class="additional">
-                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                <input type="submit" value="Info">
-                                <input type="submit" value="Mark Going">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div 
-                    data-sal-duration="800"
-                    data-sal="slide-up"
-                    data-sal-delay="700"
-                    data-sal-easing="ease-out-bounce" 
-                >
-                    <div class="card">
-                        <img src="./Resources/Images/sample.png">
-                        <div class="caption">
-                            <h3>Event Name</h3>
-                            <div class="additional">
-                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                <input type="submit" value="Info">
-                                <input type="submit" value="Mark Going">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div 
-                    data-sal-duration="800"
-                    data-sal="slide-up"
-                    data-sal-delay="800"
-                    data-sal-easing="ease-out-bounce" 
-                >
-                    <div class="card">
-                        <img src="./Resources/Images/sample.png">
-                        <div class="caption">
-                            <h3>Event Name</h3>
-                            <div class="additional">
-                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                <input type="submit" value="Info">
-                                <input type="submit" value="Mark Going">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php }?>
+
+
+                
+                
             </div>
         </div>
     </div>

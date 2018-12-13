@@ -1,3 +1,52 @@
+<?php require_once("./include/DB.php"); ?>
+<?php require_once("./include/session.php"); ?>
+<?php require_once("./include/function.php"); ?>
+
+<?php
+    if(isset($_POST["btn_signup"])){
+        
+        //grab the form data
+        $username = mysqli_real_escape_string($conn, $_POST["user_name"]);
+        $email = mysqli_real_escape_string($conn, $_POST["signup_email"]);
+        $password = mysqli_real_escape_string($conn, $_POST["signup_password"]);
+        $password_c = mysqli_real_escape_string($conn, $_POST["signup_password_confirm"]);
+        
+        
+        //check empty field
+        if(empty($username) || empty($email) || empty($password) || empty($password_c)){
+            $_SESSION["errMsg"] = "empty";
+            redirect_to("signup.php");
+            return;
+        }
+
+        //check username or email is already exist in database
+        if(isEmailAlredyExist($email) || isUserNameAlredyExist($username)){
+            $_SESSION["errMsg"] = "UserName is already there";
+            redirect_to("signup.php");
+            return;
+        }
+        
+
+        //check passwords fields are same
+        if($password != $password_c){
+            $_SESSION["errMsg"] = "passwords are not same";
+            redirect_to("signup.php");
+            return;
+        }
+
+        $sql = "INSERT INTO login(name, email,password) VALUES('$username','$email','$password')";
+        
+        if(query_execute($sql) == true){
+            redirect_to("login.php"); 
+        }
+        else{
+            $_SESSION["errMsg"] = "somthing went wrong";
+            redirect_to("signup.php");
+        }
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +66,12 @@
 
         <!-- Navigation bar -->
         <nav class="navbar bg-black">
-            <a href="./index.html"><img src="./Resources/Images/eblogo.png"></a>
+            <a href="./index.php"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
                 <li><a href="./browse-events.html">Browse Events</a></li>
                 <li><a href="./createEvent.html">Create Events</a></li>
                 <li><a href="./contact.html">Contact</a></li>
-                <li><a href="#">Log In</a></li>
+                <li><a href="./login.php">Log In</a></li>
             </ul>
         </nav>
 
@@ -39,39 +88,41 @@
                 data-sal-delay="400"
                 data-sal-easing="ease-out-bounce"
             >Please enter your email to sign up</p>
-            <form>
-                <input type="text" id="user-name" placeholder="User Name"
+            <div><?php echo success_msg();
+                    echo warn_msg();
+                    echo err_msg();
+                    echo exception_msg(); ?>
+                </div>
+            <form action="signup.php"  method="post" enctype="multipart/form-data">
+                <input type="text" id="user_name" name="user_name" placeholder="User Name"
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="500"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="text" id="contact-name" placeholder="Email"
+                <input type="text" id="signup_email" name="signup_email" placeholder="Email"
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="500"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="password" id="password" placeholder="Password"
+                <input type="password" id="signup_password" name="signup_password" placeholder="Password"
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="600"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="password" id="c-password" placeholder="Confirm Password"
+                <input type="password" id="signup_password_confirm" name="signup_password_confirm" placeholder="Confirm Password"
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="600"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="submit" id="signup" value="Sign Up"
-                    data-sal-duration="1200"
-                    data-sal="slide-up"
-                    data-sal-delay="400"
-                    data-sal-easing="ease-out-bounce"
+                <input type="submit" id="btn_signup" name="btn_signup" value="Sign Up"
+                    
                 >
             </form>
-            <a href="./login.html"
+            <a href="./login.php"
                  data-sal-duration="1200"
                 data-sal="slide-up"
                 data-sal-delay="400"
