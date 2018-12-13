@@ -1,3 +1,41 @@
+<?php require_once("./include/DB.php"); ?>
+<?php require_once("./include/session.php"); ?>
+<?php require_once("./include/function.php"); ?>
+
+<?php
+    if(isset($_POST["btn-login"])){
+        
+        //grab the form data
+        
+        $email = mysqli_real_escape_string($conn, $_POST["email"]);
+        $password = mysqli_real_escape_string($conn, $_POST["password"]);
+       
+        //check empty field
+        if(empty($email) || empty($password) ){
+            $_SESSION["errMsg"] = "empty";
+            redirect_to("login.php");
+            return;
+        }
+
+        
+    
+        
+        $found_acc = loginAttempt($email,$password);
+        $_SESSION["user_id"] = $found_acc["id"];
+        $_SESSION["user_name"] = $found_acc["name"];
+        if($found_acc){
+            //redirect to create event page
+            echo("login ok");
+        }else{
+            $_SESSION["errMsg"] = "Invalid user credintail";
+            redirect_to("login.php");
+        }
+       
+    }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,24 +77,25 @@
                 data-sal-delay="400"
                 data-sal-easing="ease-out-bounce"
             >Please enter your email and password to log in.</p>
-            <form>
-                <input type="text" id="email" placeholder="Email"
+            <div><?php echo success_msg();
+                    echo warn_msg();
+                    echo err_msg();
+                    echo exception_msg(); ?>
+            <form action="login.php"  method="post" enctype="multipart/form-data">
+                <input type="text" id="email" name="email" placeholder="Email"
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="500"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="password" id="password" placeholder="Password"
+                <input type="password" id="password" name="password" placeholder="Password"
                     data-sal-duration="1200"
                     data-sal="fade"
                     data-sal-delay="600"
                     data-sal-easing="ease-out-bounce"
                 >
-                <input type="submit" id="login" value="Login"
-                    data-sal-duration="1200"
-                    data-sal="slide-up"
-                    data-sal-delay="400"
-                    data-sal-easing="ease-out-bounce"
+                <input type="submit" id="btn-login" name="btn-login" value="Login"
+                    
                 >
             </form>
             <a href="./signup.php"

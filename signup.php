@@ -122,7 +122,7 @@
                     
                 >
             </form>
-            <a href="./login.html"
+            <a href="./login.php"
                  data-sal-duration="1200"
                 data-sal="slide-up"
                 data-sal-delay="400"

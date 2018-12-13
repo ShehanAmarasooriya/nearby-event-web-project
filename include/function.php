@@ -29,8 +29,8 @@
         }
     }
 
-    function loginAttempt($username, $email){
-        $sql = "SELECT * FROM login WHERE name='$username' AND email='$email'";
+    function loginAttempt($email, $pass){
+        $sql = "SELECT * FROM login WHERE email='$email' AND password='$pass'";
         $rec = query_execute($sql);
 
         if($user = mysqli_fetch_assoc($rec)){
@@ -48,6 +48,7 @@
 
     function confirmLogin(){
         if(!login()){
+            $_SESSION["errMsg"] = "Login reqired";
             redirect_to("login.php");
         }
     }
