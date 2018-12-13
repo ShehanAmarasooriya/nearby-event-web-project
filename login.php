@@ -25,7 +25,7 @@
         $_SESSION["user_name"] = $found_acc["name"];
         if($found_acc){
             //redirect to create event page
-            echo("login ok");
+           redirect_to("index.php");
         }else{
             $_SESSION["errMsg"] = "Invalid user credintail";
             redirect_to("login.php");
@@ -58,7 +58,8 @@
             <a href="./index.php"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
                 <li><a href="./browse-events.html">Browse Events</a></li>
-                <li><input type="submit" value="Create Event" id="createEvent" name="createEvent"></li>
+                <!--<li><input type="submit" value="Create Event" id="createEvent" name="createEvent"></li>-->
+                <li><a href="./createEvent.php">Create Event</a></li>
                 <li><a href="./contact.html">Contact</a></li>
                 <?php
                     if(isset($_SESSION['user_id'])) { ?>

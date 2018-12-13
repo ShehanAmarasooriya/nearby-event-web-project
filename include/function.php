@@ -41,7 +41,7 @@
     }
 
     function login(){
-        if(isset($_SESSION["userID"])){
+        if(isset($_SESSION["user_id"])){
             return true;
         }
     }

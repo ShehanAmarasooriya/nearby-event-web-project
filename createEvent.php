@@ -1,3 +1,34 @@
+<?php require_once("./include/DB.php"); ?>
+<?php require_once("./include/session.php"); ?>
+<?php require_once("./include/function.php"); ?>
+
+<?php confirmLogin();?>
+<?php
+
+if(isset($_POST["btnCreateEvent"])){
+
+    $ename = mysqli_real_escape_string($conn, $_POST["eventName"]);
+    $loc = mysqli_real_escape_string($conn, $_POST["location"]);
+    $sdate = mysqli_real_escape_string($conn, $_POST["sdate"]);
+    $stime = mysqli_real_escape_string($conn, $_POST["stime"]);
+    $edate = mysqli_real_escape_string($conn, $_POST["edate"]);
+    $etime = mysqli_real_escape_string($conn, $_POST["e~time"]);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,19 +48,24 @@
 
         <!-- Navigation bar -->
         <nav class="navbar bg-black-solid">
-            <a href="./index.html"><img src="./Resources/Images/eblogo.png"></a>
+            <a href="./index.php"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
                 <li><a href="./browse-events.html">Browse Events</a></li>
-                <li><input type="submit" value="Create Event" id="createEvent" name="createEvent"></li>
+                <li><a href="./createEvent.php">Create Event</a></li>
                 <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./login.html">Log In</a></li>
+                <?php
+                    if(isset($_SESSION['user_id'])) { ?>
+                <li><a id="login_btn"><?php echo $_SESSION["user_name"] ?></a></li>
+                <?php } else { ?>
+                <li><a id="login_btn" href="./login.php">Log In</a></li>
+                <?php } ?>
             </ul>
         </nav>
 
         <div class="container create-event bg-yellow">
             <h1>Create an event</h1>
             <div>
-                <form>
+                <form action="createEvent.php" method = "POST"  enctype="multipart/form-data">
                     <div>
                         <input type="text" id="eventName" name="eventName" placeholder="Event Name">
                         <input type="text" id="location" name="location" placeholder="Location">
