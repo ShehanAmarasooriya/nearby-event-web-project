@@ -16,23 +16,60 @@
     <div class="container-fluid">
 
         <!-- Navigation bar -->
-        <nav class="navbar bg-black-solid">
-            <a href="#"><img src="./Resources/Images/eblogo.png"></a>
+        <nav class="navbar bg-black">
+            <a href="./index.html"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
                 <li><a href="./browse-events.html">Browse Events</a></li>
                 <li><a href="./createEvent.html">Create Events</a></li>
                 <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./login.html">Log In</a></li>
+                <li><a href="#">Log In</a></li>
             </ul>
         </nav>
 
-        <div class="container mt-5">
-            <h1>Create an event</h1>
+        <div class="container login bg-yellow">
+            <h1
+                data-sal-duration="800"
+                data-sal="slide-up"
+                data-sal-delay="400"
+                data-sal-easing="ease-out-bounce"
+            >Login</h1>
+            <p
+                data-sal-duration="800"
+                data-sal="slide-down"
+                data-sal-delay="400"
+                data-sal-easing="ease-out-bounce"
+            >Please enter your email and password to log in.</p>
+            <form>
+                <input type="text" id="email" placeholder="Email"
+                    data-sal-duration="1200"
+                    data-sal="fade"
+                    data-sal-delay="500"
+                    data-sal-easing="ease-out-bounce"
+                >
+                <input type="password" id="password" placeholder="Password"
+                    data-sal-duration="1200"
+                    data-sal="fade"
+                    data-sal-delay="600"
+                    data-sal-easing="ease-out-bounce"
+                >
+                <input type="submit" id="login" value="Login"
+                    data-sal-duration="1200"
+                    data-sal="slide-up"
+                    data-sal-delay="400"
+                    data-sal-easing="ease-out-bounce"
+                >
+            </form>
+            <a href="./signup.html"
+                 data-sal-duration="1200"
+                data-sal="slide-up"
+                data-sal-delay="400"
+                data-sal-easing="ease-out-bounce"
+            >Create a new account</a>
         </div>
     </div>
 
     <!-- footer-->
-    <div class="container footer bg-yellow mt-3">
+    <div class="container footer bg-yellow">
         <div class="main-section">
             <h1>Stay in Touch</h1>
             <p>Subscribe for the latest updates of top events and festivals nearby</p>

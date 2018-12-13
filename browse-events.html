@@ -12,257 +12,151 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
 </head>
 <body>
-    <!-- Dimmer for login Screen -->
-    <div class="dimmer" id="login-dimmer">
-            <div class="dim-content">
-                <div class="user-form bg-black"
-                    data-sal-duration="800"
-                    data-sal="slide-down"
-                    data-sal-delay="50"
-                    data-sal-easing="ease-out-bounce"
-                >
-                    <a id="btnclose-login" class="btnclose">Close</a>
-                    <h1
-                        data-sal-duration="1200"
-                        data-sal="slide-up"
-                        data-sal-delay="200"
-                        data-sal-easing="ease-out-bounce"
-                    >Welcome back</h1>
-                    <p
-                        data-sal-duration="1200"
-                        data-sal="slide-down"
-                        data-sal-delay="300"
-                        data-sal-easing="ease-out-bounce"
-                    >Please enter your password to log in.</p>
-                    <form>
-                        <input type="text" id="login-email" placeholder="Email"
-                            data-sal-duration="1200"
-                            data-sal="fade"
-                            data-sal-delay="200"
-                            data-sal-easing="ease-out-bounce"
-                        >
-                        <input type="password" id="login-password" placeholder="Password"
-                            data-sal-duration="1200"
-                            data-sal="fade"
-                            data-sal-delay="200"
-                            data-sal-easing="ease-out-bounce"
-                        >
-                        <input type="submit" value="Login"
-                            data-sal-duration="1200"
-                            data-sal="slide-up"
-                            data-sal-delay="400"
-                            data-sal-easing="ease-out-bounce"
-                        >
-                    </form>
-                    <a id="btn-create" class="create">Create a new account</a>
-                </div>
-            </div>
-    </div>
-    
-        <!-- Dimmer for Sign up Screen -->
-        <div class="dimmer" id="signup-dimmer">
-            <div class="dim-content">
-                <div class="user-form bg-black"
-                    data-sal-duration="800"
-                    data-sal="slide-down"
-                    data-sal-delay="50"
-                    data-sal-easing="ease-out-bounce"
-                >
-                    <a id="btnclose-signup" class="btnclose">Close</a>
-                    <h1
-                        data-sal-duration="1200"
-                        data-sal="slide-up"
-                        data-sal-delay="200"
-                        data-sal-easing="ease-out-bounce"
-                    >Let's get started</h1>
-                    <p
-                        data-sal-duration="1200"
-                        data-sal="slide-down"
-                        data-sal-delay="300"
-                        data-sal-easing="ease-out-bounce"
-                    >Enter your email to sign up.</p>
-                    <form>
-                        <input type="text" id="user-name" placeholder="Name"
-                            data-sal-duration="1200"
-                            data-sal="fade"
-                            data-sal-delay="200"
-                            data-sal-easing="ease-out-bounce"
-                        >
-                        <input type="text" id="signup-email" placeholder="Email"
-                            data-sal-duration="1200"
-                            data-sal="fade"
-                            data-sal-delay="200"
-                            data-sal-easing="ease-out-bounce"
-                        >
-                        <input type="password" id="signup-password" placeholder="Password"
-                            data-sal-duration="1200"
-                            data-sal="fade"
-                            data-sal-delay="200"
-                            data-sal-easing="ease-out-bounce"
-                        >
-                        <input type="password" id="signup-password-confirm" placeholder="Confirm Password"
-                            data-sal-duration="1200"
-                            data-sal="fade"
-                            data-sal-delay="200"
-                            data-sal-easing="ease-out-bounce"
-                        >
-                        <input type="submit" value="Sign Up"
-                            data-sal-duration="1200"
-                            data-sal="slide-up"
-                            data-sal-delay="400"
-                            data-sal-easing="ease-out-bounce"
-                        >
-                    </form>
-                    <a id="btnExisting" class="create">Have an existing account</a>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Main Container -->
-        <div class="container-fluid">
-    
-            <!-- Navigation bar -->
-            <nav class="navbar bg-black">
-                <a href="./index.html"><img src="./Resources/Images/eblogo.png"></a>
-                <ul>
-                    <li><a href="./browse-events.html">Browse Events</a></li>
-                    <li><a href="./createEvent.html">Create Events</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                    <li><a id="btnlogin">Log In</a></li>
-                </ul>
-            </nav>
+    <!-- Main Container -->
+    <div class="container-fluid">
 
-            <!-- Container with the Gallery -->
-            <div class="container mt-5">
-                <h1 class="g-head"
-                    data-sal-duration="1200"
-                    data-sal="slide-right"
+        <!-- Navigation bar -->
+        <nav class="navbar bg-black">
+            <a href="./index.html"><img src="./Resources/Images/eblogo.png"></a>
+            <ul>
+                <li><a href="./browse-events.html">Browse Events</a></li>
+                <li><a href="./createEvent.html">Create Events</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./login.html">Log In</a></li>
+            </ul>
+        </nav>
+
+        <!-- Container with the Gallery -->
+        <div class="container mt-5">
+            <h1 class="g-head"
+                data-sal-duration="1200"
+                data-sal="slide-right"
+                data-sal-delay="400"
+                data-sal-easing="ease-out-bounce"
+            >Events to Explore</h1>
+            <h3 class="g-subhead"
+                data-sal-duration="1200"
+                data-sal="slide-left"
+                data-sal-delay="700"
+                data-sal-easing="ease-out-bounce"
+            >Find out all the events happening nearby...</h3>
+
+            <!-- Search bar -->
+            <div class="container bg-black-solid search-bar">
+                <form>
+                    <input type="text" id="txt-event" placeholder="Event">
+                    <input type="text" id="txt-location" placeholder="Location">
+                    <select id="select-option">
+                        <option value="any">Any date</option>
+                        <option value="today">Today</option>
+                        <option value="tomorrow">Tomorrow</option>
+                        <option value="this-weekend">This Weekend</option>
+                        <option value="this-week">This Week</option>
+                        <option value="this-month">This Month</option>
+                        <option value="next-month">Next Month</option>
+                        <option value="pick-date">Pick a Date</option>
+                    </select>
+                    <input id="input-date" type="date">
+                    <input type="button" value="Filter">
+                </form>
+            </div>
+            <!-- Gallery -->
+            <div class="gallery mt-3">
+                <div 
+                    data-sal-duration="800"
+                    data-sal="slide-up"
                     data-sal-delay="400"
-                    data-sal-easing="ease-out-bounce"
-                >Events to Explore</h1>
-                <h3 class="g-subhead"
-                    data-sal-duration="1200"
-                    data-sal="slide-left"
-                    data-sal-delay="700"
-                    data-sal-easing="ease-out-bounce"
-                >Find out all the events happening nearby...</h3>
-
-                <!-- Search bar -->
-                <div class="container bg-black-solid search-bar">
-                    <form>
-                        <input type="text" id="txt-event" placeholder="Event">
-                        <input type="text" id="txt-location" placeholder="Location">
-                        <select id="select-option">
-                            <option value="any">Any date</option>
-                            <option value="today">Today</option>
-                            <option value="tomorrow">Tomorrow</option>
-                            <option value="this-weekend">This Weekend</option>
-                            <option value="this-week">This Week</option>
-                            <option value="this-month">This Month</option>
-                            <option value="next-month">Next Month</option>
-                            <option value="pick-date">Pick a Date</option>
-                        </select>
-                        <input id="input-date" type="date">
-                        <input type="button" value="Filter">
-                    </form>
+                    data-sal-easing="ease-out-bounce" 
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/sample.png">
+                        <div class="caption">
+                            <h3>Event Name</h3>
+                            <div class="additional">
+                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
+                                <input type="submit" value="Info">
+                                <input type="submit" value="Mark Going">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Gallery -->
-                <div class="gallery mt-3">
-                    <div 
-                        data-sal-duration="800"
-                        data-sal="slide-up"
-                        data-sal-delay="400"
-                        data-sal-easing="ease-out-bounce" 
-                    >
-                        <div class="card">
-                            <img src="./Resources/Images/sample.png">
-                            <div class="caption">
-                                <h3>Event Name</h3>
-                                <div class="additional">
-                                    <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                    <input type="submit" value="Info">
-                                    <input type="submit" value="Mark Going">
-                                </div>
+                <div 
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="500"
+                    data-sal-easing="ease-out-bounce" 
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/sample.png">
+                        <div class="caption">
+                            <h3>Event Name</h3>
+                            <div class="additional">
+                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
+                                <input type="submit" value="Info">
+                                <input type="submit" value="Mark Going">
                             </div>
                         </div>
                     </div>
-                    <div 
-                        data-sal-duration="800"
-                        data-sal="slide-up"
-                        data-sal-delay="500"
-                        data-sal-easing="ease-out-bounce" 
-                    >
-                        <div class="card">
-                            <img src="./Resources/Images/sample.png">
-                            <div class="caption">
-                                <h3>Event Name</h3>
-                                <div class="additional">
-                                    <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                    <input type="submit" value="Info">
-                                    <input type="submit" value="Mark Going">
-                                </div>
+                </div>
+                <div 
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="600"
+                    data-sal-easing="ease-out-bounce" 
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/sample.png">
+                        <div class="caption">
+                            <h3>Event Name</h3>
+                            <div class="additional">
+                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
+                                <input type="submit" value="Info">
+                                <input type="submit" value="Mark Going">
                             </div>
                         </div>
                     </div>
-                    <div 
-                        data-sal-duration="800"
-                        data-sal="slide-up"
-                        data-sal-delay="600"
-                        data-sal-easing="ease-out-bounce" 
-                    >
-                        <div class="card">
-                            <img src="./Resources/Images/sample.png">
-                            <div class="caption">
-                                <h3>Event Name</h3>
-                                <div class="additional">
-                                    <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                    <input type="submit" value="Info">
-                                    <input type="submit" value="Mark Going">
-                                </div>
+                </div>
+                <div 
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="700"
+                    data-sal-easing="ease-out-bounce" 
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/sample.png">
+                        <div class="caption">
+                            <h3>Event Name</h3>
+                            <div class="additional">
+                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
+                                <input type="submit" value="Info">
+                                <input type="submit" value="Mark Going">
                             </div>
                         </div>
                     </div>
-                    <div 
-                        data-sal-duration="800"
-                        data-sal="slide-up"
-                        data-sal-delay="700"
-                        data-sal-easing="ease-out-bounce" 
-                    >
-                        <div class="card">
-                            <img src="./Resources/Images/sample.png">
-                            <div class="caption">
-                                <h3>Event Name</h3>
-                                <div class="additional">
-                                    <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                    <input type="submit" value="Info">
-                                    <input type="submit" value="Mark Going">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div 
-                        data-sal-duration="800"
-                        data-sal="slide-up"
-                        data-sal-delay="800"
-                        data-sal-easing="ease-out-bounce" 
-                    >
-                        <div class="card">
-                            <img src="./Resources/Images/sample.png">
-                            <div class="caption">
-                                <h3>Event Name</h3>
-                                <div class="additional">
-                                    <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
-                                    <input type="submit" value="Info">
-                                    <input type="submit" value="Mark Going">
-                                </div>
+                </div>
+                <div 
+                    data-sal-duration="800"
+                    data-sal="slide-up"
+                    data-sal-delay="800"
+                    data-sal-easing="ease-out-bounce" 
+                >
+                    <div class="card">
+                        <img src="./Resources/Images/sample.png">
+                        <div class="caption">
+                            <h3>Event Name</h3>
+                            <div class="additional">
+                                <p>Location: xxxxxx<br>Date: xxxx-xx-xx<br>Time: xx:xx</p>
+                                <input type="submit" value="Info">
+                                <input type="submit" value="Mark Going">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- footer-->
+    <!-- footer-->
     <div class="container footer bg-yellow mt-3">
         <div class="main-section">
             <h1>Stay in Touch</h1>
