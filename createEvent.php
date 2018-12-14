@@ -96,7 +96,7 @@ if(isset($_POST["btnCreateEvent"])){
             <ul>
                 <li><a href="./browse-events.php">Browse Events</a></li>
                 <li><a href="./createEvent.php">Create Event</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./contact.php">Contact</a></li>
                 <?php
                     if(isset($_SESSION['user_id'])) { ?>
                 <li><a id="login_btn"><?php echo $_SESSION["user_name"] ?></a></li>

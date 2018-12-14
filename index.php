@@ -2,7 +2,17 @@
 <?php require_once("./include/session.php"); ?>
 <?php require_once("./include/function.php"); ?>
 
+<?php
 
+
+
+
+
+
+
+
+
+?>
 
 
 <!DOCTYPE html>
@@ -34,12 +44,13 @@
             <ul>
                 <li><a href="./browse-events.php">Browse Events</a></li>
                 <li><a href="./createEvent.php">Create Event</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./contact.php">Contact</a></li>
                 <?php
                     if(isset($_SESSION['user_id'])) { ?>
-                <li><a id="logout_btn"><?php echo $_SESSION["user_name"] ?></a></li>
+                <li><a id="logout_btn" href="logout.php"><?php echo $_SESSION["user_name"] ?></a></li>
+                
                 <?php } else { ?>
-                <li><a id="login_btn"" href="./login.php">Log In</a></li>
+                <li><a id="login_btn" href="./login.php">Log In</a></li>
                 <?php } ?>
             </ul>
         </nav>
@@ -277,7 +288,7 @@
                 data-sal-delay="400"
                 data-sal-easing="ease-out-bounce"
             >Want to create an <span>event ?</span></h1>
-            <a class="btn-secondary" href="#">Start Now</a>
+            <a class="btn-secondary" href="createEvent.php">Start Now</a>
         </div>
 
         <!-- Latest Events -->
@@ -326,7 +337,8 @@
                             <div class="additional">
                                 <p>Location: <?php echo(htmlentities($loc));?><br>Date : <?php echo(htmlentities($sdate));?><br>Time : <?php echo(htmlentities($stime));?></p>
                                 <a href="event-display.php?id=<?php echo $id; ?>">Info</a>
-                                <input type="submit" value="Mark Going">
+                                <a  href="event-display.php?id=<?php echo $id; ?>">Mark Going</a>
+                                <!--<input type="submit" name="going" value="Mark Going">-->
                             </div>
                         </div>
                     </div>
@@ -345,11 +357,30 @@
         <div class="main-section">
             <h1>Stay in Touch</h1>
             <p>Subscribe for the latest updates of top events and festivals nearby</p>
-            <form>
-                <input type="text" id="sub-email" placeholder="Enter your email address here">
-                <input type="submit" id="sub-submit" value="Subscribe">
+            <form action="index.php" method="post" enctype="multipart/form-data">
+                <input type="text" id="sub-email" name="sub-email" placeholder="Enter your email address here">
+                <input type="submit" id="sub-submit" name="sub-submit" value="Subscribe">
             </form>
         </div>
+        <?php
+            if(isset($_POST["sub-submit"])){
+                
+                $email = $_POST["sub-email"];
+                if(empty($email)){
+                    echo '<script language="javascript">';
+                    echo 'alert("Please Enter Your Email Address")';
+                    echo '</script>'; 
+                }else{
+                    echo '<script language="javascript">';
+                echo 'alert("You will get Notifications")';
+                echo '</script>';
+                }
+
+                
+                
+            }
+        
+        ?>
         <div class="sub-section">
             <p>Follow us on</p>
             <div class="social">

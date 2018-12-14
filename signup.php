@@ -70,7 +70,7 @@
             <ul>
                 <li><a href="./browse-events.php">Browse Events</a></li>
                 <li><a href="./createEvent.php">Create Event</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./contact.php">Contact</a></li>
                 <li><a href="./login.php">Log In</a></li>
             </ul>
         </nav>
@@ -95,28 +95,16 @@
                 </div>
             <form action="signup.php"  method="post" enctype="multipart/form-data">
                 <input type="text" id="user_name" name="user_name" placeholder="User Name" onblur="validate(this)" required
-                    data-sal-duration="1200"
-                    data-sal="fade"
-                    data-sal-delay="500"
-                    data-sal-easing="ease-out-bounce"
+                    
                 >
                 <input type="text" id="signup_email" name="signup_email" placeholder="Email" onblur="validate(this)" required
-                    data-sal-duration="1200"
-                    data-sal="fade"
-                    data-sal-delay="500"
-                    data-sal-easing="ease-out-bounce"
+                    
                 >
                 <input type="password" id="signup_password" name="signup_password" placeholder="Password" onblur="validate(this)" required
-                    data-sal-duration="1200"
-                    data-sal="fade"
-                    data-sal-delay="600"
-                    data-sal-easing="ease-out-bounce"
+                    
                 >
                 <input type="password" id="signup_password_confirm" name="signup_password_confirm" placeholder="Confirm Password" onblur="matchPass(this)" required
-                    data-sal-duration="1200"
-                    data-sal="fade"
-                    data-sal-delay="600"
-                    data-sal-easing="ease-out-bounce"
+                    
                 >
                 <input type="submit" id="btn_signup" name="btn_signup" value="Sign Up">
             </form>

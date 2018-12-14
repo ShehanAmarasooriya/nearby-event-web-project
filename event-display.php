@@ -25,7 +25,7 @@
             <ul>
                 <li><a href="./browse-events.php">Browse Events</a></li>
                 <li><input type="submit" value="Create Event" id="createEvent" name="createEvent"></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./contact.php">Contact</a></li>
                 <?php
                     if(isset($_SESSION['user_id'])) { ?>
                 <li><a id="login_btn"><?php echo $_SESSION["user_name"] ?></a></li>
