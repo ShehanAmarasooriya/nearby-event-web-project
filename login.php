@@ -12,7 +12,7 @@
        
         //check empty field
         if(empty($email) || empty($password) ){
-            $_SESSION["errMsg"] = "empty";
+            $_SESSION["errMsg"] = "Fields cannot be Empty";
             redirect_to("login.php");
             return;
         }
@@ -25,9 +25,9 @@
         $_SESSION["user_name"] = $found_acc["name"];
         if($found_acc){
             //redirect to create event page
-            echo("login ok");
+           redirect_to("index.php");
         }else{
-            $_SESSION["errMsg"] = "Invalid user credintail";
+            $_SESSION["errMsg"] = "Invalid user Credentials";
             redirect_to("login.php");
         }
        
@@ -57,9 +57,10 @@
         <nav class="navbar bg-black">
             <a href="./index.php"><img src="./Resources/Images/eblogo.png"></a>
             <ul>
-                <li><a href="./browse-events.html">Browse Events</a></li>
-                <li><input type="submit" value="Create Event" id="createEvent" name="createEvent"></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./browse-events.php">Browse Events</a></li>
+                <!--<li><input type="submit" value="Create Event" id="createEvent" name="createEvent"></li>-->
+                <li><a href="./createEvent.php">Create Event</a></li>
+                <li><a href="./contact.php">Contact</a></li>
                 <?php
                     if(isset($_SESSION['user_id'])) { ?>
                 <li><a id="login_btn"><?php echo $_SESSION["user_name"] ?></a></li>
@@ -88,16 +89,10 @@
                     echo exception_msg(); ?>
             <form action="login.php"  method="post" enctype="multipart/form-data">
                 <input type="text" id="email" name="email" placeholder="Email" onblur="validate(this)" required
-                    data-sal-duration="1200"
-                    data-sal="fade"
-                    data-sal-delay="500"
-                    data-sal-easing="ease-out-bounce"
+                    
                 >
                 <input type="password" id="password" name="password" placeholder="Password" onblur="validate(this)" required
-                    data-sal-duration="1200"
-                    data-sal="fade"
-                    data-sal-delay="600"
-                    data-sal-easing="ease-out-bounce"
+                    
                 >
                 <input type="submit" id="btn-login" name="btn-login" value="Login"
                     
